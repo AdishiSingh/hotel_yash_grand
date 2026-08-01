@@ -4,7 +4,7 @@
  * status timeline mapping, and input sanitization.
  */
 
-export type RoomCategory = "DELUXE" | "EXECUTIVE" | "FAMILY" | "SUITE" | "PRESIDENTIAL";
+export type RoomCategory = "SINGLE_DELUXE" | "FAMILY";
 export type BanquetPackage = "SILVER" | "GOLD" | "ROYAL_PLATINUM";
 
 export interface PricingResult {
@@ -88,11 +88,8 @@ export function calculateStayPricing(
 ): PricingResult {
   const normType = (roomType || "").toUpperCase();
 
-  let baseRate = 3500; // Single Deluxe default
-  if (normType.includes("EXECUTIVE")) baseRate = 5500;
-  if (normType.includes("FAMILY")) baseRate = 7500;
-  if (normType.includes("ROYAL") || normType.includes("SUITE")) baseRate = 9500;
-  if (normType.includes("PRESIDENTIAL")) baseRate = 18000;
+  let baseRate = 2500; // Single Deluxe default
+  if (normType.includes("FAMILY")) baseRate = 4000;
 
   const validNights = Math.max(1, Math.floor(Number.isFinite(nights) ? nights : 1));
   const validAdults = Math.max(1, Math.floor(Number.isFinite(adults) ? adults : 1));

@@ -43,7 +43,7 @@ describe("Integration: Customer Premium Guest Portal & Dashboard Metrics", () =>
         checkIn: "2026-09-01",
         checkOut: "2026-09-05",
         guestsCount: 2,
-        roomType: "Executive Suite",
+        roomType: "Single Deluxe Room",
       }),
     });
 

@@ -503,8 +503,6 @@ export default function CustomerProfilePage() {
                 >
                   <option value="Single Deluxe Room">Single Deluxe Room</option>
                   <option value="Family Room">Family Room</option>
-                  <option value="Executive Suite">Executive Suite (High View)</option>
-                  <option value="Presidential Suite">Presidential Suite</option>
                 </select>
               </div>
 

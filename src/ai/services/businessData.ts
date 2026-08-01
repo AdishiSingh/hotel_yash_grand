@@ -13,7 +13,7 @@ export const BUSINESS_KNOWLEDGE: HotelFact[] = [
   {
     category: "rooms",
     keywords: ["room", "suite", "stay", "accommodation", "executive", "deluxe", "price", "tariff", "beds"],
-    answer: "We offer three room categories: 1) Royal Suite (luxury couple suite with premium vanity), 2) Executive Suite (business comfort with working lounge), and 3) Premium Deluxe Room. Check-in is at 12:00 PM and check-out is at 11:00 AM."
+    answer: "We offer two room categories across 11 physical rooms: 1) Single Deluxe Room (INR 2,500/night, max 2 guests, with attached balcony, highway view, 24x7 Wi-Fi, 24x7 room service, LED Smart TV, and restaurant food delivery), and 2) Family Room (INR 4,000/night, max 4 guests, consisting of two connected rooms suitable for families). Check-in is at 12:00 PM and check-out is at 11:00 AM."
   },
   {
     category: "dining",

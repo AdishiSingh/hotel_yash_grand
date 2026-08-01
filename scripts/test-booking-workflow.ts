@@ -39,7 +39,7 @@ async function runBookingWorkflowTest() {
     assignedRoomNumber: "102",
     advanceAmount: 2000,
     totalAmount: 7500,
-    managerRemarks: "Assigned Room 102 (Deluxe Suite High View). Free early check-in approved.",
+    managerRemarks: "Assigned Room 102 (Single Deluxe Room). Free early check-in approved.",
   });
 
   console.log(`✓ Manager Approval executed successfully!`);

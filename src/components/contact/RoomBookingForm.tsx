@@ -156,10 +156,6 @@ export function RoomBookingForm() {
       "Single Deluxe Room": { label: "Single Deluxe Room", max: 2 },
       "family-room": { label: "Family Room", max: 4 },
       "Family Room": { label: "Family Room", max: 4 },
-      "executive-suite": { label: "Executive Suite", max: 3 },
-      "Executive Suite": { label: "Executive Suite", max: 3 },
-      "presidential-suite": { label: "Presidential Suite", max: 6 },
-      "Presidential Suite": { label: "Presidential Suite", max: 6 },
     };
 
     const selectedRoom = ROOM_CAPACITIES[data.roomType] || { label: data.roomType, max: 2 };
@@ -551,8 +547,6 @@ export function RoomBookingForm() {
                 >
                   <option value="single-deluxe">Single Deluxe Room (Max 2 Guests • ₹2,500/night)</option>
                   <option value="family-room">Family Room (Max 4 Guests • ₹4,000/night)</option>
-                  <option value="executive-suite">Executive Suite (Max 3 Guests • ₹5,500/night)</option>
-                  <option value="presidential-suite">Presidential Suite (Max 6 Guests • ₹8,500/night)</option>
                 </select>
                 {profileAutoFilled.roomType && (
                   <span className="text-[10px] text-[#C5A880]/80 italic flex items-center gap-1 mt-1 font-sans">

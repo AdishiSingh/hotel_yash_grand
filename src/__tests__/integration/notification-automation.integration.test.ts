@@ -17,7 +17,7 @@ describe("Integration: Notification Automation & Multi-Channel Retry Queue Pipel
       guestName: "Automated Comm Guest",
       guestEmail: "commguest@yashgrand.com",
       mobile: "+919876543210",
-      roomType: "Executive Suite",
+      roomType: "Single Deluxe Room",
       checkIn: "2026-09-01",
       checkOut: "2026-09-05",
       totalAmount: 5500,

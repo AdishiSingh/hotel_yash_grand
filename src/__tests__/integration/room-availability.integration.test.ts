@@ -15,7 +15,7 @@ describe("Integration: Real-Time Room Availability & Overbooking Prevention Engi
     const room = await prisma.room.create({
       data: {
         roomNumber,
-        type: "Executive Suite",
+        type: "Single Deluxe Room",
         pricePerNight: 4500,
         capacity: 3,
         status: "AVAILABLE",

@@ -307,10 +307,8 @@ export default function RoomManagementPage() {
               className="bg-neutral-900 border border-white/15 rounded px-2.5 py-1.5 text-xs text-white outline-none cursor-pointer"
             >
               <option value="ALL">All Categories</option>
-              <option value="Single Deluxe Room">Single Deluxe</option>
+              <option value="Single Deluxe Room">Single Deluxe Room</option>
               <option value="Family Room">Family Room</option>
-              <option value="Executive Suite">Executive Suite</option>
-              <option value="Presidential Suite">Presidential Suite</option>
             </select>
           </div>
         </div>

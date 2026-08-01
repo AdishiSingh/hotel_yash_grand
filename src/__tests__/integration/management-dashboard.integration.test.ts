@@ -46,7 +46,7 @@ describe("Integration: Management Executive Command Center & Operational Metrics
         type: "ROOM",
         guestName: "Manager Control Test Guest",
         mobile: customer.phone,
-        roomType: "Executive Suite",
+        roomType: "Single Deluxe Room",
         status: "PENDING",
         customerId: customer.id,
       },
@@ -97,7 +97,7 @@ describe("Integration: Management Executive Command Center & Operational Metrics
       body: JSON.stringify({
         action: "approve",
         managerName: "Duty Manager",
-        managerRemarks: "Approved by Duty Manager with Executive Suite tariff ₹5,500/night.",
+        managerRemarks: "Approved by Duty Manager with Single Deluxe Room tariff ₹2,500/night.",
       }),
     });
 

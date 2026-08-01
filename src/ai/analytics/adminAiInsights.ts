@@ -29,7 +29,7 @@ export function generateBusinessInsights(): BusinessInsight[] {
       id: "ins-04",
       metric: "Occupancy Boost",
       trend: "positive",
-      message: "Room Occupancy stands at 85% this morning, driven by corporate stays for executive suites."
+      message: "Room Occupancy stands at 85% this morning, driven by strong demand for Single Deluxe and Family rooms."
     }
   ];
 }

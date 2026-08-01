@@ -797,7 +797,7 @@ export default function BookingRequestsDashboardPage() {
                   AI Recommendation for Manager Call
                 </span>
                 <ul className="list-disc list-inside space-y-1.5 text-[11.5px] leading-relaxed">
-                  <li>Recommend upgrading to <strong>Executive Suite</strong> for high-floor preference.</li>
+                  <li>Recommend <strong>Family Room (Two Connected Rooms)</strong> for family stay preference.</li>
                   <li>Confirm arrival time ({aiBriefReq.arrivalTime || "12:00 PM"}) to pre-assign room cleaning.</li>
                   <li>Propose a <strong>₹2,000 advance payment</strong> via UPI link to block room.</li>
                 </ul>

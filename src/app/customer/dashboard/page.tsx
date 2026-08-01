@@ -720,8 +720,6 @@ export default function CustomerDashboardPage() {
                     >
                       <option value="single-deluxe">Single Deluxe Room</option>
                       <option value="family-room">Family Room</option>
-                      <option value="executive-suite">Executive Suite</option>
-                      <option value="presidential-suite">Presidential Suite</option>
                     </select>
                   </div>
 
@@ -812,9 +810,8 @@ export default function CustomerDashboardPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { type: "Executive Suite", roomCode: "executive-suite", price: 5500, max: 3, desc: "Luxury suite featuring king size bed, balcony view, and express concierge." },
-                { type: "Presidential Suite", roomCode: "presidential-suite", price: 8500, max: 6, desc: "Master suite with dining hall, Jacuzzi bath, and dedicated butler." },
-                { type: "Family Room", roomCode: "family-room", price: 4000, max: 4, desc: "Spacious dual queen beds ideal for family vacations in Varanasi." },
+                { type: "Single Deluxe Room", roomCode: "single-deluxe", price: 2500, max: 2, desc: "A modern and comfortable room with attached balcony, highway view, 24x7 Wi-Fi, LED Smart TV, and restaurant food delivery." },
+                { type: "Family Room", roomCode: "family-room", price: 4000, max: 4, desc: "A spacious family accommodation consisting of two connected rooms suitable for families." },
               ].map((rm) => (
                 <div key={rm.roomCode} className="bg-[#0F1115] border border-white/10 hover:border-[#C5A880] rounded-2xl p-5 space-y-4 transition-all flex flex-col justify-between">
                   <div className="space-y-2">

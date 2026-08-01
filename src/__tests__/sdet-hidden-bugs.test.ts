@@ -28,7 +28,7 @@ describe("SDET Deep Security & Hidden Bug Verification Suite", () => {
 
     it("should trim surrounding whitespace in promo codes (e.g. '  yash10  ')", () => {
       const res = calculateStayPricing("DELUXE", 1, 2, 0, "  yash10  ");
-      expect(res.discountAmount).toBe(350);
+      expect(res.discountAmount).toBe(250);
     });
 
     it("should handle NaN, Infinity, and non-numeric guest inputs gracefully without crashing", () => {
@@ -57,7 +57,7 @@ describe("SDET Deep Security & Hidden Bug Verification Suite", () => {
       const maliciousRoomType = "DELUXE' UNION SELECT * FROM users; --";
       const res = calculateStayPricing(maliciousRoomType, 1, 2, 0);
       
-      expect(res.baseRatePerNight).toBe(3500); // Falls back to default Deluxe rate
+      expect(res.baseRatePerNight).toBe(2500); // Falls back to default Deluxe rate
     });
 
     it("should reject phone numbers containing extension suffixes ('9151088115 ext 101')", () => {

@@ -14,7 +14,7 @@ describe("Integration: Customer History AI Recommendation Pipeline & Explainabil
         name: "Historical Recommendation Guest",
         phone: `91${Math.floor(1000000000 + Math.random() * 9000000000).toString().slice(0, 8)}`,
         email: `recc_guest_${Date.now()}@yashgrand.com`,
-        favouriteRoom: "Executive Suite",
+        favouriteRoom: "Single Deluxe Room",
         favouriteDishes: ["Galouti Kebab", "Awadhi Biryani", "Shahi Tukda"],
         totalSpent: 28000,
         visitCount: 4,
@@ -40,7 +40,7 @@ describe("Integration: Customer History AI Recommendation Pipeline & Explainabil
     expect(recc.isReturningGuest).toBe(true);
 
     // 1. Room Recommendation
-    expect(recc.roomRecommendation.preferredRoom).toBe("Executive Suite");
+    expect(recc.roomRecommendation.preferredRoom).toBe("Single Deluxe Room");
     expect(recc.roomRecommendation.reason).toContain("Recommended because");
 
     // 2. Food & Favourite Cuisine

@@ -67,10 +67,6 @@ export class BookingRequestService {
         "Single Deluxe Room": { label: "Single Deluxe Room", max: 2 },
         "family-room": { label: "Family Room", max: 4 },
         "Family Room": { label: "Family Room", max: 4 },
-        "executive-suite": { label: "Executive Suite", max: 3 },
-        "Executive Suite": { label: "Executive Suite", max: 3 },
-        "presidential-suite": { label: "Presidential Suite", max: 6 },
-        "Presidential Suite": { label: "Presidential Suite", max: 6 },
       };
 
       const selectedRoomType = data.roomType || "single-deluxe";
@@ -314,7 +310,7 @@ Manager Dashboard: https://hotelyashgrand.com/dashboard/reservation-center`;
         lifetimeVal,
         riskScore,
         cancellationProb,
-        suggestedUpsell: request.roomType === "Single Deluxe Room" ? "Executive Suite (High View)" : "Presidential Suite",
+        suggestedUpsell: request.roomType === "Single Deluxe Room" ? "Family Room (Two Connected Rooms)" : "Single Deluxe Room",
         suggestedOffer: "Complimentary Airport Pickup & Breakfast Included",
         conversationScript: `Welcome ${request.guestName}! We are pleased to review your ${request.type} request. For your stay from ${request.checkIn ? new Date(request.checkIn).toLocaleDateString() : "TBD"}, we have assigned room ${request.assignedRoomNumber || "101"} with early check-in.`,
       },

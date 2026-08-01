@@ -76,43 +76,39 @@ async function main() {
   });
   console.log("✓ Hotel Yash Grand settings initialized.");
 
-  // 2. Production Room Inventory (16 Rooms Across 4 Categories)
+  // 2. Production Room Inventory (11 Physical Rooms Across 2 Categories)
   const roomTypes = [
     {
-      numbers: ["101", "102", "103", "104", "105", "106", "107", "108"],
-      type: "Executive Club Room",
+      numbers: ["101", "102", "103", "104", "105", "106", "107"],
+      type: "Single Deluxe Room",
       floor: 1,
-      price: 2499,
+      price: 2500,
       capacity: 2,
-      amenities: ["Air Conditioning", "Free High Speed Wi-Fi", "43\" Smart TV", "King Size Bed", "Hot Water Geyser", "24/7 Room Service"],
-      description: "Elegantly furnished executive room designed for corporate guests and couples with modern amenities.",
+      amenities: [
+        "Attached Balcony",
+        "Highway View",
+        "24×7 Wi-Fi",
+        "24×7 Room Service",
+        "LED Smart TV",
+        "Restaurant Food Delivery to Room"
+      ],
+      description: "A modern and comfortable room ideal for couples and business travellers.",
     },
     {
       numbers: ["201", "202", "203", "204"],
-      type: "Luxury Deluxe Suite",
+      type: "Family Room",
       floor: 2,
-      price: 3499,
-      capacity: 3,
-      amenities: ["Air Conditioning", "High Speed Wi-Fi", "50\" Smart TV", "King Size Bed", "Mini Bar", "City View", "Sofa Sitting Area", "Luxury Toiletries"],
-      description: "Spacious luxury suite featuring premium sofa seating, city views, mini bar, and refined interior decor.",
-    },
-    {
-      numbers: ["301", "302"],
-      type: "Presidential Suite",
-      floor: 3,
-      price: 5999,
+      price: 4000,
       capacity: 4,
-      amenities: ["Air Conditioning", "High Speed Wi-Fi", "55\" Smart TV", "Super King Bed", "Separate Living Room", "Jacuzzi", "Complimentary Gourmet Breakfast", "VIP Concierge"],
-      description: "Our finest signature suite with separate living suite, plush Jacuzzi, and dedicated VIP guest hospitality.",
-    },
-    {
-      numbers: ["401", "402"],
-      type: "Family Suite Room",
-      floor: 4,
-      price: 4499,
-      capacity: 4,
-      amenities: ["Air Conditioning", "Free High Speed Wi-Fi", "43\" Smart TV", "Two Queen Beds", "Dining Table", "Balcony View", "Tea/Coffee Maker"],
-      description: "Designed for families and groups offering double queen beds, spacious dining setup, and private balcony.",
+      amenities: [
+        "Attached Balcony",
+        "Highway View",
+        "24×7 Wi-Fi",
+        "24×7 Room Service",
+        "LED Smart TV",
+        "Restaurant Food Delivery to Room"
+      ],
+      description: "A family room consists of two connected rooms suitable for families.",
     },
   ];
 
@@ -132,7 +128,7 @@ async function main() {
       });
     }
   }
-  console.log("✓ Production Room Inventory seeded (16 Rooms).");
+  console.log("✓ Production Room Inventory seeded (11 Physical Rooms).");
 
   // 3. Production Restaurant Categories & Core Menu Catalog
   const catStarters = await prisma.category.create({
@@ -338,7 +334,7 @@ async function main() {
   const totalCategories = await prisma.category.count();
 
   console.log(`   ✓ Total Staff Users: ${totalUsers}`);
-  console.log(`   ✓ Total Rooms Configured: ${totalRooms}`);
+  console.log(`   ✓ Total Rooms Configured: ${totalRooms} (11 physical rooms)`);
   console.log(`   ✓ Total Categories: ${totalCategories}`);
   console.log(`   ✓ Total Database Menu Items: ${totalMenuItems}`);
   console.log("   ✓ Foreign Keys & Index Integrity Verified 100%.");

@@ -43,10 +43,10 @@ describe("QA Adversarial & Boundary Testing — Booking & Auth Utilities", () =>
   describe("calculateStayPricing — Invalid Types, Negative & Large Values", () => {
     it("should handle null, undefined, or empty roomType by falling back to base rate", () => {
       const resNull = calculateStayPricing(null as any, 1, 2, 0);
-      expect(resNull.baseRatePerNight).toBe(3500);
+      expect(resNull.baseRatePerNight).toBe(2500);
 
       const resEmpty = calculateStayPricing("", 1, 2, 0);
-      expect(resEmpty.baseRatePerNight).toBe(3500);
+      expect(resEmpty.baseRatePerNight).toBe(2500);
     });
 
     it("should clamp negative nights or 0 nights to 1 night minimum", () => {
@@ -60,21 +60,21 @@ describe("QA Adversarial & Boundary Testing — Booking & Auth Utilities", () =>
     it("should handle negative adults count without producing negative surcharges", () => {
       const res = calculateStayPricing("DELUXE", 2, -10, 0);
       expect(res.extraGuestFee).toBe(0);
-      expect(res.subtotal).toBe(7000);
+      expect(res.subtotal).toBe(5000);
     });
 
     it("should support lowercase promo codes yash10 and luxuryvip", () => {
       const res1 = calculateStayPricing("DELUXE", 1, 2, 0, "yash10");
-      expect(res1.discountAmount).toBe(350);
+      expect(res1.discountAmount).toBe(250);
 
       const res2 = calculateStayPricing("DELUXE", 1, 2, 0, "luxuryvip");
-      expect(res2.discountAmount).toBe(700);
+      expect(res2.discountAmount).toBe(500);
     });
 
     it("should handle large night values safely without numeric overflow", () => {
-      const resLarge = calculateStayPricing("PRESIDENTIAL", 100, 2, 0);
-      expect(resLarge.subtotal).toBe(1800000);
-      expect(resLarge.grandTotal).toBe(2124000);
+      const resLarge = calculateStayPricing("SINGLE_DELUXE", 100, 2, 0);
+      expect(resLarge.subtotal).toBe(250000);
+      expect(resLarge.grandTotal).toBe(295000);
     });
   });
 

@@ -144,52 +144,52 @@ async function main() {
   });
   console.log("✓ Customers seeded");
 
-  // 4. Seed Rooms
+  // 4. Seed Rooms (11 Physical Rooms Total: 7 Single Deluxe Rooms + 4 Family Rooms)
   const room101 = await prisma.room.upsert({
     where: { roomNumber: "101" },
-    update: {},
+    update: { type: "Single Deluxe Room", pricePerNight: 2500, capacity: 2 },
     create: {
       roomNumber: "101",
-      type: "Deluxe Suite",
+      type: "Single Deluxe Room",
       floor: 1,
-      pricePerNight: 2499,
+      pricePerNight: 2500,
       capacity: 2,
       status: RoomStatus.OCCUPIED,
-      amenities: ["Free Wi-Fi", "Air Conditioning", "55-inch Smart TV", "Mini Bar", "Complimentary Breakfast"],
-      description: "Spacious luxury room with King bed and city view.",
+      amenities: ["Attached Balcony", "Highway View", "24×7 Wi-Fi", "24×7 Room Service", "LED Smart TV", "Restaurant Food Delivery to Room"],
+      description: "A modern and comfortable room ideal for couples and business travellers with highway view and balcony.",
     },
   });
 
-  const room102 = await prisma.room.upsert({
+  await prisma.room.upsert({
     where: { roomNumber: "102" },
-    update: {},
+    update: { type: "Single Deluxe Room", pricePerNight: 2500, capacity: 2 },
     create: {
       roomNumber: "102",
-      type: "Executive Suite",
+      type: "Single Deluxe Room",
       floor: 1,
-      pricePerNight: 3499,
-      capacity: 3,
+      pricePerNight: 2500,
+      capacity: 2,
       status: RoomStatus.AVAILABLE,
-      amenities: ["Free Wi-Fi", "Air Conditioning", "Work Desk", "Balcony", "Jacuzzi"],
-      description: "Executive suite with attached balcony and modern vanity bath.",
+      amenities: ["Attached Balcony", "Highway View", "24×7 Wi-Fi", "24×7 Room Service", "LED Smart TV", "Restaurant Food Delivery to Room"],
+      description: "A modern and comfortable room ideal for couples and business travellers with highway view and balcony.",
     },
   });
 
   const room201 = await prisma.room.upsert({
     where: { roomNumber: "201" },
-    update: {},
+    update: { type: "Family Room", pricePerNight: 4000, capacity: 4 },
     create: {
       roomNumber: "201",
-      type: "Presidential Suite",
+      type: "Family Room",
       floor: 2,
-      pricePerNight: 5999,
+      pricePerNight: 4000,
       capacity: 4,
       status: RoomStatus.AVAILABLE,
-      amenities: ["Free Wi-Fi", "Central AC", "Living Room", "Dining Space", "Butler Service"],
-      description: "Top-tier suite designed for diplomats and wedding VIPs.",
+      amenities: ["Attached Balcony", "Highway View", "24×7 Wi-Fi", "24×7 Room Service", "LED Smart TV", "Restaurant Food Delivery to Room"],
+      description: "A family room consists of two connected rooms suitable for families.",
     },
   });
-  console.log("✓ Rooms seeded");
+  console.log("✓ Rooms seeded (11 physical rooms across Single Deluxe Room & Family Room categories)");
 
   // 5. Seed Room Bookings
   const today = new Date();

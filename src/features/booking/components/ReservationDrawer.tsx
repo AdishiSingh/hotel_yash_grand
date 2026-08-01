@@ -98,10 +98,6 @@ export function ReservationDrawer() {
         "Single Deluxe Room": { label: "Single Deluxe Room", max: 2 },
         "family-room": { label: "Family Room", max: 4 },
         "Family Room": { label: "Family Room", max: 4 },
-        "executive-suite": { label: "Executive Suite", max: 3 },
-        "Executive Suite": { label: "Executive Suite", max: 3 },
-        "presidential-suite": { label: "Presidential Suite", max: 6 },
-        "Presidential Suite": { label: "Presidential Suite", max: 6 },
       };
       const totalGuests = (adultsCount || 1) + (childrenCount || 0);
       const roomCapInfo = capacityMap[roomCategoryId] || { label: roomCategoryId, max: 2 };
@@ -272,8 +268,6 @@ export function ReservationDrawer() {
                       >
                         <option value="single-deluxe" className="bg-background text-foreground">Single Deluxe Room (Max 2 Guests • INR 2,500/night)</option>
                         <option value="family-room" className="bg-background text-foreground">Family Room (Max 4 Guests • INR 4,000/night)</option>
-                        <option value="executive-suite" className="bg-background text-foreground">Executive Suite (Max 3 Guests • INR 5,500/night)</option>
-                        <option value="presidential-suite" className="bg-background text-foreground">Presidential Suite (Max 6 Guests • INR 8,500/night)</option>
                       </select>
                     </div>
 
