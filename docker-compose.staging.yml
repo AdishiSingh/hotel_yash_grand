@@ -1,0 +1,52 @@
+version: "3.8"
+
+services:
+  postgres_staging:
+    image: postgres:16-alpine
+    container_name: yashgrand_postgres_staging
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres123_staging}
+      POSTGRES_DB: ${POSTGRES_DB:-yashgrand_staging}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_staging_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app_staging:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: yashgrand_app_staging
+    restart: always
+    env_file:
+      - .env.staging
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres123_staging}@postgres_staging:5432/${POSTGRES_DB:-yashgrand_staging}?schema=public
+      NODE_ENV: production
+    ports:
+      - "3001:3000"
+    depends_on:
+      postgres_staging:
+        condition: service_healthy
+
+  nginx_staging:
+    image: nginx:alpine
+    container_name: yashgrand_nginx_staging
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.staging.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app_staging
+
+volumes:
+  postgres_staging_data:
