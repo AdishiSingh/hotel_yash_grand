@@ -448,7 +448,7 @@ export function ReservationDrawer() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-neutral-400">Arrival - Departure</span>
-                      <span className="font-medium text-foreground">{checkInDate} // {checkOutDate}</span>
+                      <span className="font-medium text-foreground">{checkInDate} {"//"} {checkOutDate}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-neutral-400">Total Guests</span>

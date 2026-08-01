@@ -16,7 +16,7 @@ function StatCounter({ targetNum, displayText, suffix = "", label }: CounterStat
   useEffect(() => {
     if (!isInView || targetNum === undefined) return;
 
-    let start = 0;
+    const start = 0;
     const end = targetNum;
     const duration = 1800; // 1.8 seconds
     const startTime = performance.now();

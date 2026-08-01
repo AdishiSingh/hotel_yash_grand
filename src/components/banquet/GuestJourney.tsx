@@ -82,7 +82,7 @@ export function GuestJourney() {
                 {/* Card details */}
                 <div className="space-y-1.5 pt-1.5 flex-1 border-b border-white/5 pb-4 group-hover:border-gold/15 transition-colors duration-300">
                   <span className="text-[8.5px] uppercase tracking-widest text-[#DFBA73] font-bold block">
-                    Phase 0{idx + 1} // {step.title}
+                    Phase 0{idx + 1} {"//"} {step.title}
                   </span>
                   <h4 className="font-serif text-sm font-semibold text-white tracking-wide">
                     {step.title}

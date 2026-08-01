@@ -19,7 +19,7 @@ function GlanceCard({ numberVal, suffix = "", displayText, subtitle, description
   useEffect(() => {
     if (!isInView || numberVal === undefined) return;
 
-    let start = 0;
+    const start = 0;
     const end = numberVal;
     const duration = 1800;
     const startTime = performance.now();

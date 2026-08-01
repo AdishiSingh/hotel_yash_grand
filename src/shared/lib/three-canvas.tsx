@@ -25,16 +25,18 @@ export function ThreeCanvas({
 
   // Check for WebGL capability on client mount
   React.useEffect(() => {
+    let active = true;
     try {
       const canvas = document.createElement("canvas");
       const support = !!(
         window.WebGLRenderingContext &&
         (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
       );
-      setIsWebGLSupported(support);
+      if (active) setIsWebGLSupported(support);
     } catch {
-      setIsWebGLSupported(false);
+      if (active) setIsWebGLSupported(false);
     }
+    return () => { active = false; };
   }, []);
 
   // Simple deferred trigger for Awwwards-style entry reveal

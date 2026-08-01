@@ -66,7 +66,7 @@ export function Testimonials() {
 
               {/* Quote content */}
               <p className="font-serif text-base sm:text-xl font-light italic leading-relaxed text-[#A9A9A9] max-w-2xl px-2">
-                "{currentReview.quote}"
+                &ldquo;{currentReview.quote}&rdquo;
               </p>
 
               {/* Author info */}

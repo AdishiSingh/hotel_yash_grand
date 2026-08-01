@@ -18,7 +18,7 @@ function StatCard({ icon: Icon, target, suffix = "", staticVal, label }: StatPro
   useEffect(() => {
     if (!isInView || !target) return;
 
-    let start = 0;
+    const start = 0;
     const end = target;
     const duration = 2000;
     const startTime = performance.now();

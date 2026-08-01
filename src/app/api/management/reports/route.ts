@@ -7,7 +7,7 @@ export async function GET(req: NextRequest) {
     const timeframe = searchParams.get("range") || "MONTHLY"; // DAILY, WEEKLY, MONTHLY, YEARLY
 
     const now = new Date();
-    let startDate = new Date();
+    const startDate = new Date();
 
     if (timeframe === "DAILY") {
       startDate.setHours(0, 0, 0, 0);

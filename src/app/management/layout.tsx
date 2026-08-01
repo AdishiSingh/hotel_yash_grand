@@ -45,10 +45,6 @@ export default function ManagementLayout({
   const pathname = usePathname();
   const router = useRouter();
 
-  if (pathname === "/management/login") {
-    return <>{children}</>;
-  }
-
   const [user, setUser] = useState<ManagementUserSession | null>(null);
   const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -67,6 +63,11 @@ export default function ManagementLayout({
   };
 
   useEffect(() => {
+    if (pathname === "/management/login") {
+      setLoading(false);
+      return;
+    }
+
     fetch("/api/management/auth/me")
       .then((res) => res.json())
       .then((data) => {
@@ -76,9 +77,17 @@ export default function ManagementLayout({
           router.push("/management/login");
         }
       })
-      .catch(() => router.push("/management/login"))
-      .finally(() => setLoading(false));
-  }, [router]);
+      .catch(() => {
+        router.push("/management/login");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [pathname, router]);
+
+  if (pathname === "/management/login") {
+    return <>{children}</>;
+  }
 
   const handleLogout = async () => {
     try {

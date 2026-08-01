@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Link from "next/link";
 import { AlertCircle, RefreshCw, Sparkles } from "lucide-react";
 
 export default function ErrorBoundary({
@@ -50,12 +51,12 @@ export default function ErrorBoundary({
             <RefreshCw className="h-3.5 w-3.5" />
             <span>Retry Operation</span>
           </button>
-          <a
+          <Link
             href="/"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-transparent border border-white/10 hover:border-gold/30 hover:bg-white/5 text-white text-[9.5px] uppercase tracking-widest font-bold rounded-sm cursor-pointer transition-all duration-300"
           >
             <span>Return Home</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
     const analytics = await AnalyticsService.getAnalytics(timeframe);
 
     let exportData: any[] = [];
-    let filename = `yash_grand_report_${type}_${timeframe}.csv`;
+    const filename = `yash_grand_report_${type}_${timeframe}.csv`;
 
     if (type === "dishes") {
       exportData = analytics.topDishes;

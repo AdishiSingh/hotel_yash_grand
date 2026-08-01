@@ -272,7 +272,7 @@ export function Footer() {
           <span>© {new Date().getFullYear()} Hotel Yash Grand. All Rights Reserved.</span>
           <div className="flex gap-6">
             <a href="#" className="hover:text-gold">Privacy Policy</a>
-            <span>//</span>
+            <span>{"//"}</span>
             <a href="#" className="hover:text-gold">Terms & Conditions</a>
           </div>
         </div>
