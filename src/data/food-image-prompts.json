@@ -1,0 +1,1946 @@
+[
+  {
+    "id": "soup-1",
+    "name": "Cream of Tomato Soup",
+    "slug": "cream-of-tomato-soup",
+    "category": "Soup",
+    "categorySlug": "soup",
+    "imagePath": "/assets/food/soup/cream-of-tomato-soup.webp",
+    "prompt": "Cream of Tomato Soup - Classic rich tomato broth finished with fresh cream and bread croutons.. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "soup-2",
+    "name": "Cream of Mushroom Soup",
+    "slug": "cream-of-mushroom-soup",
+    "category": "Soup",
+    "categorySlug": "soup",
+    "imagePath": "/assets/food/soup/cream-of-mushroom-soup.webp",
+    "prompt": "Cream of Mushroom Soup - Earthy mushroom soup blended with herbs and finished with a touch of heavy cream.. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "soup-3",
+    "name": "Cream of Veg Soup",
+    "slug": "cream-of-veg-soup",
+    "category": "Soup",
+    "categorySlug": "soup",
+    "imagePath": "/assets/food/soup/cream-of-veg-soup.webp",
+    "prompt": "Cream of Veg Soup - Mild, creamy soup loaded with finely chopped seasonal fresh vegetables.. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "soup-4",
+    "name": "Veg Sweet Corn Soup",
+    "slug": "veg-sweet-corn-soup",
+    "category": "Soup",
+    "categorySlug": "soup",
+    "imagePath": "/assets/food/soup/veg-sweet-corn-soup.webp",
+    "prompt": "Veg Sweet Corn Soup - Hearty and sweet soup filled with tender sweet corn kernels and minced vegetables.. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "soup-5",
+    "name": "Veg Manchow Soup",
+    "slug": "veg-manchow-soup",
+    "category": "Soup",
+    "categorySlug": "soup",
+    "imagePath": "/assets/food/soup/veg-manchow-soup.webp",
+    "prompt": "Veg Manchow Soup - Spicy Indo-Chinese dark soy soup garnished with crispy fried noodles.. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "soup-6",
+    "name": "Veg Hot & Sour Soup",
+    "slug": "veg-hot-and-sour-soup",
+    "category": "Soup",
+    "categorySlug": "soup",
+    "imagePath": "/assets/food/soup/veg-hot-and-sour-soup.webp",
+    "prompt": "Veg Hot & Sour Soup - Tangy and fiery pepper broth filled with finely julienned vegetables and tofu.. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "soup-7",
+    "name": "Lemon Coriander Soup",
+    "slug": "lemon-coriander-soup",
+    "category": "Soup",
+    "categorySlug": "soup",
+    "imagePath": "/assets/food/soup/lemon-coriander-soup.webp",
+    "prompt": "Lemon Coriander Soup - Refreshing clear soup infused with tangy lemon and fresh green coriander leaves.. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "salad-8",
+    "name": "Green Salad",
+    "slug": "green-salad",
+    "category": "Salad & Papad",
+    "categorySlug": "salad-papad",
+    "imagePath": "/assets/food/salad-papad/Green Salad.png",
+    "prompt": "Green Salad - Freshly sliced onions, cucumbers, carrots, tomatoes, and green chillies served with lemon.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "salad-9",
+    "name": "Onion Salad",
+    "slug": "onion-salad",
+    "category": "Salad & Papad",
+    "categorySlug": "salad-papad",
+    "imagePath": "/assets/food/salad-papad/Onion Salad.png",
+    "prompt": "Onion Salad - Crispy thinly sliced onion rings sprinkled with salt, lemon juice, and chaat masala.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "salad-10",
+    "name": "Cucumber Salad",
+    "slug": "cucumber-salad",
+    "category": "Salad & Papad",
+    "categorySlug": "salad-papad",
+    "imagePath": "/assets/food/salad-papad/Cucumber Salad.png",
+    "prompt": "Cucumber Salad - Chilled fresh cucumber slices tossed with light seasoning.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "salad-11",
+    "name": "Kachumber Salad",
+    "slug": "kachumber-salad",
+    "category": "Salad & Papad",
+    "categorySlug": "salad-papad",
+    "imagePath": "/assets/food/salad-papad/Kachumber Salad.png",
+    "prompt": "Kachumber Salad - Tangy diced onions, tomatoes, and cucumbers dressed with spices, coriander, and fresh lemon.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "salad-12",
+    "name": "Roasted Papad",
+    "slug": "roasted-papad",
+    "category": "Salad & Papad",
+    "categorySlug": "salad-papad",
+    "imagePath": "/assets/food/salad-papad/Roasted Papad.png",
+    "prompt": "Roasted Papad - Crisp tandoor-roasted lentil wafer.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "salad-13",
+    "name": "Fried Papad",
+    "slug": "fried-papad",
+    "category": "Salad & Papad",
+    "categorySlug": "salad-papad",
+    "imagePath": "/assets/food/salad-papad/Fried Papad.png",
+    "prompt": "Fried Papad - Deep-fried crispy lentil wafer.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "salad-14",
+    "name": "Masala Papad",
+    "slug": "masala-papad",
+    "category": "Salad & Papad",
+    "categorySlug": "salad-papad",
+    "imagePath": "/assets/food/salad-papad/Masala Papad.png",
+    "prompt": "Masala Papad - Crispy papad topped with spicy chopped onions, tomatoes, coriander, and chat masala.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "starter-15",
+    "name": "Paneer Chilli (Dry/Gravy)",
+    "slug": "paneer-chilli",
+    "category": "Starter (Chinese)",
+    "categorySlug": "starter-chinese",
+    "imagePath": "/assets/food/starter-chinese/Paneer Chilli (Dry-Gravy).png",
+    "prompt": "Paneer Chilli (Dry/Gravy) - Cottage cheese cubes tossed with bell peppers, onions, and green chillies in a soy-garlic glaze.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "starter-16",
+    "name": "Mushroom Chilli (Dry/Gravy)",
+    "slug": "mushroom-chilli",
+    "category": "Starter (Chinese)",
+    "categorySlug": "starter-chinese",
+    "imagePath": "/assets/food/starter-chinese/Mushroom Chilli (Dry-Gravy).png",
+    "prompt": "Mushroom Chilli (Dry/Gravy) - Crispy button mushrooms stir-fried with onions and capsicum in spicy dark soy sauce.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "starter-17",
+    "name": "Veg Manchurian (Dry/Gravy)",
+    "slug": "veg-manchurian",
+    "category": "Starter (Chinese)",
+    "categorySlug": "starter-chinese",
+    "imagePath": "/assets/food/starter-chinese/Veg Manchurian (Dry-Gravy).png",
+    "prompt": "Veg Manchurian (Dry/Gravy) - Deep-fried mixed vegetable balls tossed in a rich, tangy Manchurian sauce.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "starter-18",
+    "name": "Baby Corn Chilli (Dry/Gravy)",
+    "slug": "baby-corn-chilli",
+    "category": "Starter (Chinese)",
+    "categorySlug": "starter-chinese",
+    "imagePath": "/assets/food/starter-chinese/Baby Corn Chilli (Dry-Gravy).png",
+    "prompt": "Baby Corn Chilli (Dry/Gravy) - Crispy baby corn spears tossed with fresh capsicum, spring onions, and garlic-soya glaze.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "starter-19",
+    "name": "Potato Chilli",
+    "slug": "potato-chilli",
+    "category": "Starter (Chinese)",
+    "categorySlug": "starter-chinese",
+    "imagePath": "/assets/food/starter-chinese/Potato Chilli.png",
+    "prompt": "Potato Chilli - Crispy potato wedges tossed with onions, green chillies, and soy sauce.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "starter-20",
+    "name": "Honey Chilli Potato",
+    "slug": "honey-chilli-potato",
+    "category": "Starter (Chinese)",
+    "categorySlug": "starter-chinese",
+    "imagePath": "/assets/food/starter-chinese/Honey Chilli Potato.png",
+    "prompt": "Honey Chilli Potato - Sweet and spicy crispy potatoes coated in dark honey and fiery chilli paste.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "starter-21",
+    "name": "Crispy Corn",
+    "slug": "crispy-corn",
+    "category": "Starter (Chinese)",
+    "categorySlug": "starter-chinese",
+    "imagePath": "/assets/food/starter-chinese/Crispy Corn.png",
+    "prompt": "Crispy Corn - Crisp-fried sweet corn kernels tossed with black pepper, spring onions, and spices.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "starter-22",
+    "name": "French Fries",
+    "slug": "french-fries",
+    "category": "Starter (Chinese)",
+    "categorySlug": "starter-chinese",
+    "imagePath": "/assets/food/starter-chinese/French Fries.png",
+    "prompt": "French Fries - Golden fried salted potato strips, crisp on the outside and soft inside.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "starter-23",
+    "name": "Masala French Fries",
+    "slug": "masala-french-fries",
+    "category": "Starter (Chinese)",
+    "categorySlug": "starter-chinese",
+    "imagePath": "/assets/food/starter-chinese/Masala French Fries.png",
+    "prompt": "Masala French Fries - Crispy golden French fries tossed in a spicy, aromatic Indian masala blend.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "starter-24",
+    "name": "Veg Spring Roll",
+    "slug": "veg-spring-roll",
+    "category": "Starter (Chinese)",
+    "categorySlug": "starter-chinese",
+    "imagePath": "/assets/food/starter-chinese/Veg Spring Roll.png",
+    "prompt": "Veg Spring Roll - Crispy fried rolls stuffed with seasoned stir-fried vegetables and glass noodles.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "starter-25",
+    "name": "Paneer 65",
+    "slug": "paneer-65",
+    "category": "Starter (Chinese)",
+    "categorySlug": "starter-chinese",
+    "imagePath": "/assets/food/starter-chinese/Paneer 65.png",
+    "prompt": "Paneer 65 - Deep-fried paneer cubes marinated in yogurt and fiery south-Indian spices.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "starter-26",
+    "name": "Mushroom 65",
+    "slug": "mushroom-65",
+    "category": "Starter (Chinese)",
+    "categorySlug": "starter-chinese",
+    "imagePath": "/assets/food/starter-chinese/Mushroom 65.png",
+    "prompt": "Mushroom 65 - Spicy and crisp fried button mushrooms marinated in traditional spices.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-27",
+    "name": "Veg Fried Rice",
+    "slug": "veg-fried-rice",
+    "category": "Rice & Noodles",
+    "categorySlug": "rice-noodles",
+    "imagePath": "/assets/food/rice-noodles/Veg Fried Rice.png",
+    "prompt": "Veg Fried Rice - Wok-tossed aromatic basmati rice stir-fried with garden fresh vegetables.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-28",
+    "name": "Schezwan Fried Rice",
+    "slug": "schezwan-fried-rice",
+    "category": "Rice & Noodles",
+    "categorySlug": "rice-noodles",
+    "imagePath": "/assets/food/rice-noodles/Schezwan Fried Rice.png",
+    "prompt": "Schezwan Fried Rice - Fiery fried rice tossed in a bold, house-made spicy Schezwan sauce.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-29",
+    "name": "Paneer Fried Rice",
+    "slug": "paneer-fried-rice",
+    "category": "Rice & Noodles",
+    "categorySlug": "rice-noodles",
+    "imagePath": "/assets/food/rice-noodles/Paneer Fried Rice.png",
+    "prompt": "Paneer Fried Rice - Savory fried rice loaded with sautéed cottage cheese chunks and veggies.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-30",
+    "name": "Garlic Fried Rice",
+    "slug": "garlic-fried-rice",
+    "category": "Rice & Noodles",
+    "categorySlug": "rice-noodles",
+    "imagePath": "/assets/food/rice-noodles/Garlic Fried Rice.png",
+    "prompt": "Garlic Fried Rice - Fragrant stir-fried rice loaded with golden-brown toasted garlic and spring onions.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-31",
+    "name": "Mixed Fried Rice",
+    "slug": "mixed-fried-rice",
+    "category": "Rice & Noodles",
+    "categorySlug": "rice-noodles",
+    "imagePath": "/assets/food/rice-noodles/Mixed Fried Rice.png",
+    "prompt": "Mixed Fried Rice - Grand mix of paneer, mushrooms, and seasonal vegetables tossed with fried rice.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-32",
+    "name": "Veg Noodles",
+    "slug": "veg-noodles",
+    "category": "Rice & Noodles",
+    "categorySlug": "rice-noodles",
+    "imagePath": "/assets/food/rice-noodles/Veg Noodles.png",
+    "prompt": "Veg Noodles - Stir-fried soft noodles tossed with shredded cabbage, carrots, and sweet bell peppers.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-33",
+    "name": "Veg Hakka Noodles",
+    "slug": "veg-hakka-noodles",
+    "category": "Rice & Noodles",
+    "categorySlug": "rice-noodles",
+    "imagePath": "/assets/food/rice-noodles/Veg Hakka Noodles.png",
+    "prompt": "Veg Hakka Noodles - Classic street-style stir-fried Hakka noodles with soy, vinegar, and crisp greens.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-34",
+    "name": "Chilli Garlic Noodles",
+    "slug": "chilli-garlic-noodles",
+    "category": "Rice & Noodles",
+    "categorySlug": "rice-noodles",
+    "imagePath": "/assets/food/rice-noodles/Chilli Garlic Noodles.jpeg",
+    "prompt": "Chilli Garlic Noodles - Fiery wok-tossed noodles coated in house chilli oil, crushed garlic cloves, and greens.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-35",
+    "name": "Schezwan Noodles",
+    "slug": "schezwan-noodles",
+    "category": "Rice & Noodles",
+    "categorySlug": "rice-noodles",
+    "imagePath": "/assets/food/rice-noodles/Schezwan Noodles.png",
+    "prompt": "Schezwan Noodles - Fiery stir-fried noodles tossed in an intensely flavorful Schezwan chili paste.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-36",
+    "name": "Paneer Noodles",
+    "slug": "paneer-noodles",
+    "category": "Rice & Noodles",
+    "categorySlug": "rice-noodles",
+    "imagePath": "/assets/food/rice-noodles/Paneer Noodles.png",
+    "prompt": "Paneer Noodles - Soft noodles stir-fried with spiced paneer cubes and crunchy vegetables.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-37",
+    "name": "Mixed Noodles",
+    "slug": "mixed-noodles",
+    "category": "Rice & Noodles",
+    "categorySlug": "rice-noodles",
+    "imagePath": "/assets/food/rice-noodles/Mixed Noodles.png",
+    "prompt": "Mixed Noodles - Rich combination of paneer, mushroom, and mixed vegetables tossed with noodles.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-38",
+    "name": "Paneer Butter Masala",
+    "slug": "paneer-butter-masala",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Paneer Butter Masala.png",
+    "prompt": "Paneer Butter Masala - Soft paneer cubes cooked in a rich, creamy tomato and cashew-nut gravy loaded with butter.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-39",
+    "name": "Kadai Paneer",
+    "slug": "kadai-paneer",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Kadai Paneer.png",
+    "prompt": "Kadai Paneer - Fresh paneer cooked with capsicum, onions, and fresh ground spices in a traditional iron wok.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-40",
+    "name": "Shahi Paneer",
+    "slug": "shahi-paneer",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Shahi Paneer.png",
+    "prompt": "Shahi Paneer - Soft cottage cheese triangles cooked in an aromatic, velvety tomato-cashew nut gravy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-41",
+    "name": "Paneer Tikka Masala",
+    "slug": "paneer-tikka-masala",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Paneer Tikka Masala.png",
+    "prompt": "Paneer Tikka Masala - Clay-oven grilled paneer tikkas simmered in a rich, spiced onion-tomato masala gravy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-42",
+    "name": "Paneer Do Pyaza",
+    "slug": "paneer-do-pyaza",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Paneer Do Pyaza.png",
+    "prompt": "Paneer Do Pyaza - Delectable dish featuring paneer chunks cooked with double-style sautéed and raw onions.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-43",
+    "name": "Handi Paneer",
+    "slug": "handi-paneer",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Handi Paneer.png",
+    "prompt": "Handi Paneer - Paneer cooked in a rich clay pot gravy containing specialized house spices and yogurt.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-44",
+    "name": "Palak Paneer",
+    "slug": "palak-paneer",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Palak Paneer.png",
+    "prompt": "Palak Paneer - Classic dish of cottage cheese cooked in a nutrient-rich, spiced spinach puree.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-45",
+    "name": "Paneer Lawabdar",
+    "slug": "paneer-lawabdar",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Paneer Lawabdar.png",
+    "prompt": "Paneer Lawabdar - Paneer cubes in a luscious, semi-sweet and slightly spicy tomato, onion, and grated paneer gravy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-46",
+    "name": "Paneer Bhurji",
+    "slug": "paneer-bhurji",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Paneer Bhurji.png",
+    "prompt": "Paneer Bhurji - Fresh scrambled cottage cheese sautéed with green chillies, onions, tomatoes, and aromatic spices.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-47",
+    "name": "Mix Veg",
+    "slug": "mix-veg",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Mix Veg.png",
+    "prompt": "Mix Veg - Assorted seasonal vegetables tossed together with traditional Indian spices.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-48",
+    "name": "Veg Jalfrezi",
+    "slug": "veg-jalfrezi",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Veg Jalfrezi.png",
+    "prompt": "Veg Jalfrezi - Tangy and spicy stir-fried vegetables cooked with bell peppers and onion juliennes.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-49",
+    "name": "Veg Kolhapuri",
+    "slug": "veg-kolhapuri",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Veg Kolhapuri.png",
+    "prompt": "Veg Kolhapuri - Extremely spicy and rich vegetable curry prepared with traditional Maharashtrian Kolhapuri spices.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-50",
+    "name": "Handi Veg",
+    "slug": "handi-veg",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Handi Veg.png",
+    "prompt": "Handi Veg - Mixed vegetables slow-cooked in a traditional clay pot with rich, thick gravy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-51",
+    "name": "Handi Mushroom",
+    "slug": "handi-mushroom",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Handi Mushroom.png",
+    "prompt": "Handi Mushroom - Fresh button mushrooms slow-cooked in a handi with thick, aromatic onion gravy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-52",
+    "name": "Mushroom Do Pyaza",
+    "slug": "mushroom-do-pyaza",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Mushroom Do Pyaza.png",
+    "prompt": "Mushroom Do Pyaza - Fresh button mushrooms cooked with a generous amount of onions added in two stages.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-53",
+    "name": "Kadai Mushroom",
+    "slug": "kadai-mushroom",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Kadai Mushroom.png",
+    "prompt": "Kadai Mushroom - Mushrooms sautéed with bell peppers and thick masala, cooked in an iron wok.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-54",
+    "name": "Mushroom Masala",
+    "slug": "mushroom-masala",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Mushroom Masala.png",
+    "prompt": "Mushroom Masala - Button mushrooms simmered in a highly seasoned tomato-onion masala gravy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-55",
+    "name": "Mushroom Matar",
+    "slug": "mushroom-matar",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Mushroom Matar.png",
+    "prompt": "Mushroom Matar - Classic pairing of tender mushrooms and sweet green peas cooked in a spiced curry.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-56",
+    "name": "Matar Paneer",
+    "slug": "matar-paneer",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Matar Paneer.png",
+    "prompt": "Matar Paneer - Home-style delicious curry made with cottage cheese cubes and sweet green peas.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-57",
+    "name": "Malai Kofta",
+    "slug": "malai-kofta",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Malai Kofta.png",
+    "prompt": "Malai Kofta - Rich, premium dish of potato and paneer dumplings (koftas) in a sweet, creamy white gravy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-58",
+    "name": "Veg Kofta",
+    "slug": "veg-kofta",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Veg Kofta.png",
+    "prompt": "Veg Kofta - Tasty vegetable dumplings simmered in a savory and spicy tomato-based gravy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-59",
+    "name": "Kaju Curry",
+    "slug": "kaju-curry",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Kaju Curry.png",
+    "prompt": "Kaju Curry - Whole roasted cashew nuts simmered in a rich, buttery onion-tomato paste gravy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-60",
+    "name": "Kaju Paneer Masala",
+    "slug": "kaju-paneer-masala",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Kaju Paneer Masala.png",
+    "prompt": "Kaju Paneer Masala - Cottage cheese chunks and whole cashews cooked together in a luxurious Mughlai-style gravy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-61",
+    "name": "Aloo Gobhi Matar",
+    "slug": "aloo-gobhi-matar",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Aloo Gobhi Matar.png",
+    "prompt": "Aloo Gobhi Matar - Comforting dry dish made with potatoes, cauliflower, and green peas seasoned with ginger and cumin.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-62",
+    "name": "Jeera Aloo",
+    "slug": "jeera-aloo",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Jeera Aloo.png",
+    "prompt": "Jeera Aloo - Simple, delicious potatoes sautéed with dry roasted cumin seeds and basic spices.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-63",
+    "name": "Dum Aloo (Kashmiri)",
+    "slug": "dum-aloo-kashmiri",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Dum Aloo (Kashmiri).png",
+    "prompt": "Dum Aloo (Kashmiri) - Baby potatoes slow-cooked in a spicy yogurt and dry ginger powder based gravy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-64",
+    "name": "Dum Aloo (Punjabi)",
+    "slug": "dum-aloo-punjabi",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Dum Aloo (Punjabi).png",
+    "prompt": "Dum Aloo (Punjabi) - Rich Punjabi-style fried baby potatoes cooked in a tangy tomato-onion gravy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-65",
+    "name": "Chana Masala",
+    "slug": "chana-masala",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Chana Masala.png",
+    "prompt": "Chana Masala - Tangy and spicy chickpea curry cooked with raw mango powder and warm spices.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-66",
+    "name": "Soya Chaap Masala",
+    "slug": "soya-chaap-masala",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Soya Chaap Masala.png",
+    "prompt": "Soya Chaap Masala - Succulent soya chaap sticks cut and slow-cooked in a robust tomato-onion gravy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-67",
+    "name": "Soya Chaap Butter Masala",
+    "slug": "soya-chaap-butter-masala",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Soya Chaap Butter Masala.png",
+    "prompt": "Soya Chaap Butter Masala - Tender soya chaap pieces cooked in a creamy, velvety butter gravy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-125",
+    "name": "Paneer Lababdar",
+    "slug": "paneer-lababdar",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/paneer-lababdar.webp",
+    "prompt": "Paneer Lababdar - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-128",
+    "name": "Paneer Dhaniya Adraki",
+    "slug": "paneer-dhaniya-adraki",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Paneer Dhaniya Adraki.png",
+    "prompt": "Paneer Dhaniya Adraki - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-134",
+    "name": "Matar Mushroom",
+    "slug": "matar-mushroom",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/matar-mushroom.webp",
+    "prompt": "Matar Mushroom - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-137",
+    "name": "Soya Chap Masala",
+    "slug": "soya-chap-masala",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/soya-chap-masala.webp",
+    "prompt": "Soya Chap Masala - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-138",
+    "name": "Soya Chap Chatpati",
+    "slug": "soya-chap-chatpati",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/soya-chap-chatpati.webp",
+    "prompt": "Soya Chap Chatpati - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-139",
+    "name": "Soya Chap Curry",
+    "slug": "soya-chap-curry",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/soya-chap-curry.webp",
+    "prompt": "Soya Chap Curry - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-141",
+    "name": "Veg Jhalfrezi",
+    "slug": "veg-jalfrezi",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/veg-jalfrezi.webp",
+    "prompt": "Veg Jhalfrezi - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-143",
+    "name": "Aloo Gobhi Masala",
+    "slug": "aloo-gobhi-masala",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/aloo-gobhi-masala.webp",
+    "prompt": "Aloo Gobhi Masala - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-144",
+    "name": "Diwani Handi",
+    "slug": "diwani-handi",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/diwani-handi.webp",
+    "prompt": "Diwani Handi - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-145",
+    "name": "Hyderabadi Moti",
+    "slug": "hyderabadi-moti",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Hyderabadi Moti.png",
+    "prompt": "Hyderabadi Moti - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-146",
+    "name": "Sham Savera Kofta",
+    "slug": "sham-savera-kofta",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Sham Savera Kofta.png",
+    "prompt": "Sham Savera Kofta - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-147",
+    "name": "Vegetable Kofta",
+    "slug": "vegetable-kofta",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/vegetable-kofta.webp",
+    "prompt": "Vegetable Kofta - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-149",
+    "name": "Aloo Zeera",
+    "slug": "aloo-zeera",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/aloo-zeera.webp",
+    "prompt": "Aloo Zeera - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-150",
+    "name": "Bhindi Masala",
+    "slug": "bhindi-masala",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Bhindi Masala.png",
+    "prompt": "Bhindi Masala - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-151",
+    "name": "Kurkuri Bhindi",
+    "slug": "kurkuri-bhindi",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Kurkuri Bhindi.png",
+    "prompt": "Kurkuri Bhindi - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-152",
+    "name": "Aloo Matar",
+    "slug": "aloo-matar",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Aloo Matar.png",
+    "prompt": "Aloo Matar - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-153",
+    "name": "Rajma Curry",
+    "slug": "rajma-curry",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Rajma Curry.png",
+    "prompt": "Rajma Curry - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "main-154",
+    "name": "Punjabi Rajma",
+    "slug": "punjabi-rajma",
+    "category": "Main Course",
+    "categorySlug": "main-course",
+    "imagePath": "/assets/food/main-course/Punjabi Rajma.png",
+    "prompt": "Punjabi Rajma - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dal-68",
+    "name": "Dal Fry",
+    "slug": "dal-fry",
+    "category": "Dal",
+    "categorySlug": "dal",
+    "imagePath": "/assets/food/dal/Dal Fry.png",
+    "prompt": "Dal Fry - Yellow lentils tempered with ghee, cumin seeds, garlic, and fresh tomatoes.. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dal-69",
+    "name": "Dal Double Tadka",
+    "slug": "dal-double-tadka",
+    "category": "Dal",
+    "categorySlug": "dal",
+    "imagePath": "/assets/food/dal/Dal Double Tadka.png",
+    "prompt": "Dal Double Tadka - Lentils tempered twice with red chillies, garlic, and aromatic spices for double depth.. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dal-70",
+    "name": "Dal Makhani",
+    "slug": "dal-makhani",
+    "category": "Dal",
+    "categorySlug": "dal",
+    "imagePath": "/assets/food/dal/Dal Makhani.png",
+    "prompt": "Dal Makhani - Whole black urad lentils slow-cooked overnight with fresh cream, butter, and tomatoes.. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dal-71",
+    "name": "Dal Palak",
+    "slug": "dal-palak",
+    "category": "Dal",
+    "categorySlug": "dal",
+    "imagePath": "/assets/food/dal/Dal Palak.png",
+    "prompt": "Dal Palak - Yellow lentils combined with fresh spinach and tempered with garlic and cumin.. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dal-155",
+    "name": "Dal Tadka",
+    "slug": "dal-tadka",
+    "category": "Dal",
+    "categorySlug": "dal",
+    "imagePath": "/assets/food/dal/Dal Tadka.png",
+    "prompt": "Dal Tadka - Premium Indian culinary dish. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dal-158",
+    "name": "Dal Panchmel",
+    "slug": "dal-panchmel",
+    "category": "Dal",
+    "categorySlug": "dal",
+    "imagePath": "/assets/food/dal/Dal Panchmel.png",
+    "prompt": "Dal Panchmel - Premium Indian culinary dish. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dal-160",
+    "name": "Chole",
+    "slug": "chole",
+    "category": "Dal",
+    "categorySlug": "dal",
+    "imagePath": "/assets/food/dal/Chole.png",
+    "prompt": "Chole - Premium Indian culinary dish. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dal-162",
+    "name": "Rajma Masala",
+    "slug": "rajma-masala",
+    "category": "Dal",
+    "categorySlug": "dal",
+    "imagePath": "/assets/food/dal/Rajma Masala.png",
+    "prompt": "Rajma Masala - Premium Indian culinary dish. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dal-163",
+    "name": "Kadhi Pakodi",
+    "slug": "kadhi-pakodi",
+    "category": "Dal",
+    "categorySlug": "dal",
+    "imagePath": "/assets/food/dal/Kadhi Pakodi.png",
+    "prompt": "Kadhi Pakodi - Premium Indian culinary dish. Beautifully arranged and served in a matte black ceramic bowl on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-72",
+    "name": "Plain Rice",
+    "slug": "plain-rice",
+    "category": "Rice & Biryani",
+    "categorySlug": "rice-biryani",
+    "imagePath": "/assets/food/rice-biryani/Plain Rice.png",
+    "prompt": "Plain Rice - Steamed premium basmati rice, soft and fluffy.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-73",
+    "name": "Jeera Rice",
+    "slug": "jeera-rice",
+    "category": "Rice & Biryani",
+    "categorySlug": "rice-biryani",
+    "imagePath": "/assets/food/rice-biryani/Jeera Rice.png",
+    "prompt": "Jeera Rice - Fragrant basmati rice tempered with ghee and cumin seeds.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-74",
+    "name": "Peas Pulao",
+    "slug": "peas-pulao",
+    "category": "Rice & Biryani",
+    "categorySlug": "rice-biryani",
+    "imagePath": "/assets/food/rice-biryani/Peas Pulao.png",
+    "prompt": "Peas Pulao - Saffron-tinged basmati rice cooked with fresh sweet green peas and mild spices.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-75",
+    "name": "Veg Pulao",
+    "slug": "veg-pulao",
+    "category": "Rice & Biryani",
+    "categorySlug": "rice-biryani",
+    "imagePath": "/assets/food/rice-biryani/Veg Pulao.png",
+    "prompt": "Veg Pulao - Fragrant basmati rice cooked with assorted seasonal vegetables and warm spices.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-76",
+    "name": "Veg Biryani",
+    "slug": "veg-biryani",
+    "category": "Rice & Biryani",
+    "categorySlug": "rice-biryani",
+    "imagePath": "/assets/food/rice-biryani/Veg Biryani.png",
+    "prompt": "Veg Biryani - Layered basmati rice and spiced vegetables slow-cooked (dum) with saffron and mint.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-77",
+    "name": "Paneer Biryani",
+    "slug": "paneer-biryani",
+    "category": "Rice & Biryani",
+    "categorySlug": "rice-biryani",
+    "imagePath": "/assets/food/rice-biryani/Paneer Biryani.png",
+    "prompt": "Paneer Biryani - Layered basmati rice and marinated paneer cubes slow-cooked with aromatic spices.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-78",
+    "name": "Handi Biryani",
+    "slug": "handi-biryani",
+    "category": "Rice & Biryani",
+    "categorySlug": "rice-biryani",
+    "imagePath": "/assets/food/rice-biryani/Handi Biryani.png",
+    "prompt": "Handi Biryani - Aromatic vegetable and paneer biryani slow dum-cooked in a traditional clay handi.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-217",
+    "name": "Steam Rice",
+    "slug": "steam-rice",
+    "category": "Rice & Biryani",
+    "categorySlug": "rice-biryani",
+    "imagePath": "/assets/food/rice-biryani/Steam Rice.png",
+    "prompt": "Steam Rice - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-220",
+    "name": "Matar Pulao",
+    "slug": "matar-pulao",
+    "category": "Rice & Biryani",
+    "categorySlug": "rice-biryani",
+    "imagePath": "/assets/food/rice-biryani/Matar Pulao.png",
+    "prompt": "Matar Pulao - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-221",
+    "name": "Kashmiri Pulao",
+    "slug": "kashmiri-pulao",
+    "category": "Rice & Biryani",
+    "categorySlug": "rice-biryani",
+    "imagePath": "/assets/food/rice-biryani/Kashmiri Pulao.png",
+    "prompt": "Kashmiri Pulao - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "rice-223",
+    "name": "Veg Dum Biryani",
+    "slug": "veg-dum-biryani",
+    "category": "Rice & Biryani",
+    "categorySlug": "rice-biryani",
+    "imagePath": "/assets/food/rice-biryani/veg-dum-biryani.webp",
+    "prompt": "Veg Dum Biryani - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bread-79",
+    "name": "Tandoori Roti Plain",
+    "slug": "tandoori-roti-plain",
+    "category": "Tandoori Bread",
+    "categorySlug": "tandoori-bread",
+    "imagePath": "/assets/food/tandoori-bread/Tandoori Roti Plain.png",
+    "prompt": "Tandoori Roti Plain - Healthy whole wheat flatbread baked on the walls of a hot clay oven.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bread-80",
+    "name": "Tandoori Roti Butter",
+    "slug": "tandoori-roti-butter",
+    "category": "Tandoori Bread",
+    "categorySlug": "tandoori-bread",
+    "imagePath": "/assets/food/tandoori-bread/Tandoori Roti Plain.png",
+    "prompt": "Tandoori Roti Butter - Clay-oven baked whole wheat flatbread glazed with premium fresh butter.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bread-81",
+    "name": "Missi Roti",
+    "slug": "missi-roti",
+    "category": "Tandoori Bread",
+    "categorySlug": "tandoori-bread",
+    "imagePath": "/assets/food/tandoori-bread/Missi Roti.png",
+    "prompt": "Missi Roti - Traditional flatbread made with chickpea flour, wheat flour, and fine Indian spices.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bread-82",
+    "name": "Plain Naan",
+    "slug": "plain-naan",
+    "category": "Tandoori Bread",
+    "categorySlug": "tandoori-bread",
+    "imagePath": "/assets/food/tandoori-bread/Plain Naan.png",
+    "prompt": "Plain Naan - Baked leavened white-flour flatbread direct from the tandoor.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bread-83",
+    "name": "Butter Naan",
+    "slug": "butter-naan",
+    "category": "Tandoori Bread",
+    "categorySlug": "tandoori-bread",
+    "imagePath": "/assets/food/tandoori-bread/Butter Naan.png",
+    "prompt": "Butter Naan - Clay-oven baked white flour flatbread glazed with premium fresh butter.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bread-84",
+    "name": "Garlic Naan",
+    "slug": "garlic-naan",
+    "category": "Tandoori Bread",
+    "categorySlug": "tandoori-bread",
+    "imagePath": "/assets/food/tandoori-bread/Garlic Naan.png",
+    "prompt": "Garlic Naan - Soft flatbread infused with finely minced garlic, baked in the clay oven.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bread-85",
+    "name": "Paneer Naan",
+    "slug": "paneer-naan",
+    "category": "Tandoori Bread",
+    "categorySlug": "tandoori-bread",
+    "imagePath": "/assets/food/tandoori-bread/Paneer Naan.png",
+    "prompt": "Paneer Naan - Delicious leavened flatbread stuffed with spiced grated paneer.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bread-86",
+    "name": "Aloo Stuffed Kulcha",
+    "slug": "aloo-stuffed-kulcha",
+    "category": "Tandoori Bread",
+    "categorySlug": "tandoori-bread",
+    "imagePath": "/assets/food/tandoori-bread/Aloo Stuffed Kulcha.png",
+    "prompt": "Aloo Stuffed Kulcha - Crispy flatbread stuffed with highly seasoned mashed potatoes.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bread-87",
+    "name": "Paneer Stuffed Kulcha",
+    "slug": "paneer-stuffed-kulcha",
+    "category": "Tandoori Bread",
+    "categorySlug": "tandoori-bread",
+    "imagePath": "/assets/food/tandoori-bread/Paneer Stuffed Kulcha.png",
+    "prompt": "Paneer Stuffed Kulcha - Crispy flatbread stuffed with spiced paneer filling.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bread-88",
+    "name": "Lachha Paratha",
+    "slug": "lachha-paratha",
+    "category": "Tandoori Bread",
+    "categorySlug": "tandoori-bread",
+    "imagePath": "/assets/food/tandoori-bread/Laccha Paratha.png",
+    "prompt": "Lachha Paratha - Multi-layered crispy and flaky whole wheat flatbread.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bread-89",
+    "name": "Pudina Paratha",
+    "slug": "pudina-paratha",
+    "category": "Tandoori Bread",
+    "categorySlug": "tandoori-bread",
+    "imagePath": "/assets/food/tandoori-bread/Pudina Paratha.png",
+    "prompt": "Pudina Paratha - Layered wheat flatbread flavored with dried mint leaves.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "tandoor-90",
+    "name": "Paneer Tikka",
+    "slug": "paneer-tikka",
+    "category": "Tandoor Starter",
+    "categorySlug": "tandoor-starter",
+    "imagePath": "/assets/food/tandoor-starter/Paneer Tikka.png",
+    "prompt": "Paneer Tikka - Spiced paneer cubes skewered with onions and peppers, roasted in the clay tandoor.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "tandoor-91",
+    "name": "Paneer Malai Tikka",
+    "slug": "paneer-malai-tikka",
+    "category": "Tandoor Starter",
+    "categorySlug": "tandoor-starter",
+    "imagePath": "/assets/food/tandoor-starter/paneer-malai-tikka.webp",
+    "prompt": "Paneer Malai Tikka - Creamy clay-oven roasted cottage cheese chunks marinated in cardamoms and cashew paste.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "tandoor-92",
+    "name": "Paneer Achari Tikka",
+    "slug": "paneer-achari-tikka",
+    "category": "Tandoor Starter",
+    "categorySlug": "tandoor-starter",
+    "imagePath": "/assets/food/tandoor-starter/Paneer Achari Tikka.png",
+    "prompt": "Paneer Achari Tikka - Paneer cubes marinated in a pickling spice blend (achari) and cooked in the tandoor.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "tandoor-93",
+    "name": "Mushroom Tikka",
+    "slug": "mushroom-tikka",
+    "category": "Tandoor Starter",
+    "categorySlug": "tandoor-starter",
+    "imagePath": "/assets/food/tandoor-starter/Mushroom Tikka.png",
+    "prompt": "Mushroom Tikka - Button mushrooms marinated in yogurt and tikka spices, grilled to perfection.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "tandoor-94",
+    "name": "Tandoori Soya Chaap",
+    "slug": "tandoori-soya-chaap",
+    "category": "Tandoor Starter",
+    "categorySlug": "tandoor-starter",
+    "imagePath": "/assets/food/tandoor-starter/Tandoori soya Chaap.png",
+    "prompt": "Tandoori Soya Chaap - Soya chaap sticks marinated in spiced yogurt and grilled in the clay oven.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "tandoor-95",
+    "name": "Malai Soya Chaap",
+    "slug": "malai-soya-chaap",
+    "category": "Tandoor Starter",
+    "categorySlug": "tandoor-starter",
+    "imagePath": "/assets/food/tandoor-starter/Malai Soya Chaap.png",
+    "prompt": "Malai Soya Chaap - Tender soya chaap marinated in cream, cheese, cashew paste, and spices, roasted in tandoor.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "tandoor-96",
+    "name": "Achari Soya Chaap",
+    "slug": "achari-soya-chaap",
+    "category": "Tandoor Starter",
+    "categorySlug": "tandoor-starter",
+    "imagePath": "/assets/food/tandoor-starter/Achari Soya Chaap.png",
+    "prompt": "Achari Soya Chaap - Tandoor roasted soya chaap sticks coated in tangy pickling spices.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "tandoor-97",
+    "name": "Veg Seekh Kabab",
+    "slug": "veg-seekh-kabab",
+    "category": "Tandoor Starter",
+    "categorySlug": "tandoor-starter",
+    "imagePath": "/assets/food/tandoor-starter/veg-seekh-kabab.webp",
+    "prompt": "Veg Seekh Kabab - Finely minced seasoned garden vegetables, skewered and finished over glowing embers.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "south-98",
+    "name": "Plain Dosa",
+    "slug": "plain-dosa",
+    "category": "South Indian",
+    "categorySlug": "south-indian",
+    "imagePath": "/assets/food/south-indian/Plain Dosa.png",
+    "prompt": "Plain Dosa - Crispy thin crepe made of fermented rice and lentil batter.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "south-99",
+    "name": "Masala Dosa",
+    "slug": "masala-dosa",
+    "category": "South Indian",
+    "categorySlug": "south-indian",
+    "imagePath": "/assets/food/south-indian/Masala Dosa.png",
+    "prompt": "Masala Dosa - Thin rice crepe filled with seasoned, mashed potatoes and onions.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "south-100",
+    "name": "Paneer Dosa",
+    "slug": "paneer-dosa",
+    "category": "South Indian",
+    "categorySlug": "south-indian",
+    "imagePath": "/assets/food/south-indian/Paneer Dosa.png",
+    "prompt": "Paneer Dosa - Crispy rice crepe stuffed with spiced grated cottage cheese filling.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "south-101",
+    "name": "Butter Masala Dosa",
+    "slug": "butter-masala-dosa",
+    "category": "South Indian",
+    "categorySlug": "south-indian",
+    "imagePath": "/assets/food/south-indian/Butter Masala Dosa.png",
+    "prompt": "Butter Masala Dosa - Crispy masala dosa prepared with a generous topping of fresh butter.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "south-102",
+    "name": "Rava Plain Dosa",
+    "slug": "rava-plain-dosa",
+    "category": "South Indian",
+    "categorySlug": "south-indian",
+    "imagePath": "/assets/food/south-indian/Rava Plain Dosa.png",
+    "prompt": "Rava Plain Dosa - Crispy, lacy crepe made from semolina and rice flour batter.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "south-103",
+    "name": "Rava Masala Dosa",
+    "slug": "rava-masala-dosa",
+    "category": "South Indian",
+    "categorySlug": "south-indian",
+    "imagePath": "/assets/food/south-indian/Rava Masala Dosa.png",
+    "prompt": "Rava Masala Dosa - Lacy semolina crepe stuffed with seasoned potato-onion filling.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "south-104",
+    "name": "Plain Uttapam",
+    "slug": "plain-uttapam",
+    "category": "South Indian",
+    "categorySlug": "south-indian",
+    "imagePath": "/assets/food/south-indian/plain-uttapam.webp",
+    "prompt": "Plain Uttapam - Thick savory rice batter pancake cooked griddle style.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "south-105",
+    "name": "Onion Uttapam",
+    "slug": "onion-uttapam",
+    "category": "South Indian",
+    "categorySlug": "south-indian",
+    "imagePath": "/assets/food/rice-noodles/Onion Uttapam.png",
+    "prompt": "Onion Uttapam - Thick rice batter pancake loaded with chopped onions and green chillies.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "south-106",
+    "name": "Mixed Uttapam",
+    "slug": "mixed-uttapam",
+    "category": "South Indian",
+    "categorySlug": "south-indian",
+    "imagePath": "/assets/food/south-indian/Mixed Uttapam.png",
+    "prompt": "Mixed Uttapam - Thick rice pancake topped with a colorful mix of diced vegetables and herbs.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "south-107",
+    "name": "Idli Sambhar (2 Pcs)",
+    "slug": "idli-sambhar",
+    "category": "South Indian",
+    "categorySlug": "south-indian",
+    "imagePath": "/assets/food/south-indian/Idli Sambhar.png",
+    "prompt": "Idli Sambhar (2 Pcs) - Steamed fluffy rice-lentil cakes served with piping hot vegetable sambar.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "south-108",
+    "name": "Vada Sambhar (2 Pcs)",
+    "slug": "vada-sambhar",
+    "category": "South Indian",
+    "categorySlug": "south-indian",
+    "imagePath": "/assets/food/south-indian/Vada Sambhar.png",
+    "prompt": "Vada Sambhar (2 Pcs) - Deep-fried savory lentil donuts, crispy outside and soft inside, served with sambar.. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-109",
+    "name": "Mineral Water",
+    "slug": "mineral-water",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/Mineral Water.jpeg",
+    "prompt": "Mineral Water - Packaged pure mineral drinking water.. Beautifully arranged and served in a premium crystal glassware on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-110",
+    "name": "Cold Drink",
+    "slug": "cold-drink",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/Cold Drink.png",
+    "prompt": "Cold Drink - Assorted chilled carbonated soft drinks.. Beautifully arranged and served in a premium crystal glassware on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-111",
+    "name": "Fresh Lime Soda",
+    "slug": "fresh-lime-soda",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/Fresh Lime.png",
+    "prompt": "Fresh Lime Soda - Refreshing soda drink flavored with fresh lime juice and sweet or salted syrup.. Beautifully arranged and served in a premium textured glass cup on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-112",
+    "name": "Sweet Lassi",
+    "slug": "sweet-lassi",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/Sweet Lassi.png",
+    "prompt": "Sweet Lassi - Traditional Punjabi yogurt drink sweetened with sugar and cardamoms.. Beautifully arranged and served in a traditional Indian clay kulhad (terracotta cup) on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-113",
+    "name": "Salted Lassi",
+    "slug": "salted-lassi",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/salted-lassi.webp",
+    "prompt": "Salted Lassi - Traditional chilled yogurt drink flavored with roasted cumin seeds and black salt.. Beautifully arranged and served in a traditional Indian clay kulhad (terracotta cup) on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-114",
+    "name": "Butter Milk",
+    "slug": "butter-milk",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/butter-milk.webp",
+    "prompt": "Butter Milk - Light, spiced watered yogurt beverage perfect for digestion.. Beautifully arranged and served in a premium textured glass cup on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-115",
+    "name": "Milk Shake (Vanilla)",
+    "slug": "milk-shake-vanilla",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/Milk Shake(Vanilla).png",
+    "prompt": "Milk Shake (Vanilla) - Chilled milk blended with vanilla ice cream and sweet vanilla extract.. Beautifully arranged and served in a premium textured glass cup on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-116",
+    "name": "Milk Shake (Chocolate)",
+    "slug": "milk-shake-chocolate",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/Milk Shake(Chocolate).png",
+    "prompt": "Milk Shake (Chocolate) - Chilled rich milk blended with chocolate ice cream and rich chocolate fudge.. Beautifully arranged and served in a premium textured glass cup on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-117",
+    "name": "Milk Shake (Strawberry)",
+    "slug": "milk-shake-strawberry",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/Milk Shake(Strawberry).png",
+    "prompt": "Milk Shake (Strawberry) - Smooth and creamy shake blended with sweet strawberries and ice cream.. Beautifully arranged and served in a premium textured glass cup on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-118",
+    "name": "Milk Shake (Butter Scotch)",
+    "slug": "milk-shake-butter-scotch",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/Milk Shake (Butter Scotch).png",
+    "prompt": "Milk Shake (Butter Scotch) - Rich milk shake flavored with premium butterscotch chips and caramel sauce.. Beautifully arranged and served in a premium textured glass cup on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-119",
+    "name": "Cold Coffee",
+    "slug": "cold-coffee",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/Cold Coffee.png",
+    "prompt": "Cold Coffee - Classic creamy iced coffee blended with sweet milk and sugar.. Beautifully arranged and served in a premium textured glass cup on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-120",
+    "name": "Cold Coffee with Ice Cream",
+    "slug": "cold-coffee-with-ice-cream",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/Cold Coffee with Ice Cream.png",
+    "prompt": "Cold Coffee with Ice Cream - Classic cold coffee topped with a rich scoop of vanilla ice cream.. Beautifully arranged and served in a premium textured glass cup on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-121",
+    "name": "Tea",
+    "slug": "tea",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/tea.webp",
+    "prompt": "Tea - Varanasi style robust milk tea brewed with cardamoms and ginger.. Beautifully arranged and served in a traditional Indian clay kulhad (terracotta cup) on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-122",
+    "name": "Black Tea",
+    "slug": "black-tea",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/Black Tea.png",
+    "prompt": "Black Tea - Fresh brewed hot black tea infusion.. Beautifully arranged and served in a traditional Indian clay kulhad (terracotta cup) on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-123",
+    "name": "Green Tea",
+    "slug": "green-tea",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/green-tea.webp",
+    "prompt": "Green Tea - Hot, health-supporting green tea infusion.. Beautifully arranged and served in a traditional Indian clay kulhad (terracotta cup) on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-124",
+    "name": "Hot Coffee",
+    "slug": "hot-coffee",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/hot-coffee.webp",
+    "prompt": "Hot Coffee - Aromatic whipped instant hot coffee prepared with fresh milk.. Beautifully arranged and served in a premium textured glass cup on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-170",
+    "name": "Canned Juice",
+    "slug": "canned-juice",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/canned-juice.webp",
+    "prompt": "Canned Juice - Premium Indian culinary dish. Beautifully arranged and served in a premium crystal glassware on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-171",
+    "name": "Canned Soft Drink",
+    "slug": "canned-soft-drink",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/canned-soft-drink.webp",
+    "prompt": "Canned Soft Drink - Premium Indian culinary dish. Beautifully arranged and served in a premium crystal glassware on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-172",
+    "name": "Fresh Lime Soda (Sweet & Salt)",
+    "slug": "fresh-lime-soda-sweet-salt",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/fresh-lime-soda-sweet-salt.webp",
+    "prompt": "Fresh Lime Soda (Sweet & Salt) - Premium Indian culinary dish. Beautifully arranged and served in a premium textured glass cup on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-173",
+    "name": "Lassi (Sweet & Salt)",
+    "slug": "lassi-sweet-salt",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/lassi-sweet-salt.webp",
+    "prompt": "Lassi (Sweet & Salt) - Premium Indian culinary dish. Beautifully arranged and served in a traditional Indian clay kulhad (terracotta cup) on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-177",
+    "name": "Choice of Health Shake",
+    "slug": "choice-of-health-shake",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/choice-of-health-shake.webp",
+    "prompt": "Choice of Health Shake - Premium Indian culinary dish. Beautifully arranged and served in a premium crystal glassware on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-178",
+    "name": "Strawberry / Chocolate / Vanilla / Mango / Banana Milk Shake",
+    "slug": "strawberry-chocolate-vanilla-mango-banana-milk-shake",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/strawberry-chocolate-vanilla-mango-banana-milk-shake.webp",
+    "prompt": "Strawberry / Chocolate / Vanilla / Mango / Banana Milk Shake - Premium Indian culinary dish. Beautifully arranged and served in a premium textured glass cup on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-180",
+    "name": "Masala Tea",
+    "slug": "masala-tea",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/masala-tea.webp",
+    "prompt": "Masala Tea - Premium Indian culinary dish. Beautifully arranged and served in a traditional Indian clay kulhad (terracotta cup) on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-181",
+    "name": "Coffee",
+    "slug": "coffee",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/coffee.webp",
+    "prompt": "Coffee - Premium Indian culinary dish. Beautifully arranged and served in a premium textured glass cup on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-182",
+    "name": "Hot Milk",
+    "slug": "hot-milk",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/hot-milk.webp",
+    "prompt": "Hot Milk - Premium Indian culinary dish. Beautifully arranged and served in a premium textured glass cup on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-183",
+    "name": "Health Booster",
+    "slug": "health-booster",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/health-booster.webp",
+    "prompt": "Health Booster - Premium Indian culinary dish. Beautifully arranged and served in a premium crystal glassware on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-184",
+    "name": "Bournvita / Hot Chocolate",
+    "slug": "bournvita-hot-chocolate",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/bournvita-hot-chocolate.webp",
+    "prompt": "Bournvita / Hot Chocolate - Premium Indian culinary dish. Beautifully arranged and served in a premium crystal glassware on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-185",
+    "name": "Blue Lagoon",
+    "slug": "blue-lagoon",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/blue-lagoon.webp",
+    "prompt": "Blue Lagoon - Premium Indian culinary dish. Beautifully arranged and served in a premium crystal glassware on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-186",
+    "name": "Orange Blossom",
+    "slug": "orange-blossom",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/orange-blossom.webp",
+    "prompt": "Orange Blossom - Premium Indian culinary dish. Beautifully arranged and served in a premium crystal glassware on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-187",
+    "name": "Mango Tango",
+    "slug": "mango-tango",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/mango-tango.webp",
+    "prompt": "Mango Tango - Premium Indian culinary dish. Beautifully arranged and served in a premium crystal glassware on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-188",
+    "name": "Fruit Punch",
+    "slug": "fruit-punch",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/fruit-punch.webp",
+    "prompt": "Fruit Punch - Premium Indian culinary dish. Beautifully arranged and served in a premium crystal glassware on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-189",
+    "name": "Litchi Cooler",
+    "slug": "litchi-cooler",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/litchi-cooler.webp",
+    "prompt": "Litchi Cooler - Premium Indian culinary dish. Beautifully arranged and served in a premium crystal glassware on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "bev-190",
+    "name": "Virgin Mojito",
+    "slug": "virgin-mojito",
+    "category": "Beverages",
+    "categorySlug": "beverages",
+    "imagePath": "/assets/food/beverages/virgin-mojito.webp",
+    "prompt": "Virgin Mojito - Premium Indian culinary dish. Beautifully arranged and served in a premium crystal glassware on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "momo-164",
+    "name": "Mix Veg Momos",
+    "slug": "mix-veg-momos",
+    "category": "Momos",
+    "categorySlug": "momos",
+    "imagePath": "/assets/food/momos/Mix Veg Momos.png",
+    "prompt": "Mix Veg Momos - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "momo-165",
+    "name": "Corn Cheese Momos",
+    "slug": "corn-cheese-momos",
+    "category": "Momos",
+    "categorySlug": "momos",
+    "imagePath": "/assets/food/momos/Corn Cheese Momos.png",
+    "prompt": "Corn Cheese Momos - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "momo-166",
+    "name": "Paneer Tikka Momos",
+    "slug": "paneer-tikka-momos",
+    "category": "Momos",
+    "categorySlug": "momos",
+    "imagePath": "/assets/food/momos/Paneer Tikka Momos.png",
+    "prompt": "Paneer Tikka Momos - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "momo-167",
+    "name": "Paneer Momos",
+    "slug": "paneer-momos",
+    "category": "Momos",
+    "categorySlug": "momos",
+    "imagePath": "/assets/food/momos/Paneer Momos.png",
+    "prompt": "Paneer Momos - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "momo-168",
+    "name": "Veg Peri Peri Momos",
+    "slug": "veg-peri-peri-momos",
+    "category": "Momos",
+    "categorySlug": "momos",
+    "imagePath": "/assets/food/momos/Veg Peri Peri Momos.png",
+    "prompt": "Veg Peri Peri Momos - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "momo-169",
+    "name": "Mushroom Momos",
+    "slug": "mushroom-momos",
+    "category": "Momos",
+    "categorySlug": "momos",
+    "imagePath": "/assets/food/momos/Mushroom Momos.png",
+    "prompt": "Mushroom Momos - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "sandwich-191",
+    "name": "Sandwich of Choice (Vegetable)",
+    "slug": "sandwich-of-choice-vegetable",
+    "category": "Sandwiches",
+    "categorySlug": "sandwiches",
+    "imagePath": "/assets/food/sandwiches/sandwich-of-choice-vegetable.webp",
+    "prompt": "Sandwich of Choice (Vegetable) - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "sandwich-192",
+    "name": "Sandwich of Choice (Cheese)",
+    "slug": "sandwich-of-choice-cheese",
+    "category": "Sandwiches",
+    "categorySlug": "sandwiches",
+    "imagePath": "/assets/food/sandwiches/sandwich-of-choice-cheese.webp",
+    "prompt": "Sandwich of Choice (Cheese) - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "sandwich-193",
+    "name": "Sandwich of Choice (Paneer)",
+    "slug": "sandwich-of-choice-paneer",
+    "category": "Sandwiches",
+    "categorySlug": "sandwiches",
+    "imagePath": "/assets/food/sandwiches/sandwich-of-choice-paneer.webp",
+    "prompt": "Sandwich of Choice (Paneer) - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "sandwich-194",
+    "name": "Veg Club Sandwich",
+    "slug": "veg-club-sandwich",
+    "category": "Sandwiches",
+    "categorySlug": "sandwiches",
+    "imagePath": "/assets/food/sandwiches/veg-club-sandwich.webp",
+    "prompt": "Veg Club Sandwich - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "sandwich-195",
+    "name": "Chilli Cheese Toasted",
+    "slug": "chilli-cheese-toasted",
+    "category": "Sandwiches",
+    "categorySlug": "sandwiches",
+    "imagePath": "/assets/food/sandwiches/chilli-cheese-toasted.webp",
+    "prompt": "Chilli Cheese Toasted - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "sandwich-196",
+    "name": "Cheese Corn Sandwich",
+    "slug": "cheese-corn-sandwich",
+    "category": "Sandwiches",
+    "categorySlug": "sandwiches",
+    "imagePath": "/assets/food/sandwiches/cheese-corn-sandwich.webp",
+    "prompt": "Cheese Corn Sandwich - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "pizza-197",
+    "name": "Pizza Margherita",
+    "slug": "pizza-margherita",
+    "category": "Pizza",
+    "categorySlug": "pizza",
+    "imagePath": "/assets/food/pizza/Margherita Pizza.png",
+    "prompt": "Pizza Margherita - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "pizza-198",
+    "name": "Exotic Veg Pizza",
+    "slug": "exotic-veg-pizza",
+    "category": "Pizza",
+    "categorySlug": "pizza",
+    "imagePath": "/assets/food/pizza/Exotic Veg Pizza.png",
+    "prompt": "Exotic Veg Pizza - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "pizza-199",
+    "name": "Mexican Veg Pizza",
+    "slug": "mexican-veg-pizza",
+    "category": "Pizza",
+    "categorySlug": "pizza",
+    "imagePath": "/assets/food/pizza/Mexican Veg Pizza.png",
+    "prompt": "Mexican Veg Pizza - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "pizza-200",
+    "name": "Mushroom & Cheese Pizza",
+    "slug": "mushroom-cheese-pizza",
+    "category": "Pizza",
+    "categorySlug": "pizza",
+    "imagePath": "/assets/food/pizza/Mushroom Pizza.png",
+    "prompt": "Mushroom & Cheese Pizza - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "pizza-201",
+    "name": "Corn Pizza",
+    "slug": "corn-pizza",
+    "category": "Pizza",
+    "categorySlug": "pizza",
+    "imagePath": "/assets/food/pizza/Corn Pizza.png",
+    "prompt": "Corn Pizza - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "pizza-202",
+    "name": "Onion Pizza",
+    "slug": "onion-pizza",
+    "category": "Pizza",
+    "categorySlug": "pizza",
+    "imagePath": "/assets/food/pizza/Onion Pizza.png",
+    "prompt": "Onion Pizza - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "pizza-203",
+    "name": "Capsicum Pizza",
+    "slug": "capsicum-pizza",
+    "category": "Pizza",
+    "categorySlug": "pizza",
+    "imagePath": "/assets/food/pizza/Capsicum Pizza.png",
+    "prompt": "Capsicum Pizza - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "pizza-204",
+    "name": "Paneer Delight Pizza",
+    "slug": "paneer-delight-pizza",
+    "category": "Pizza",
+    "categorySlug": "pizza",
+    "imagePath": "/assets/food/pizza/Paneer Delight Pizza.png",
+    "prompt": "Paneer Delight Pizza - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "pizza-205",
+    "name": "Paneer Tikka Pizza",
+    "slug": "paneer-tikka-pizza",
+    "category": "Pizza",
+    "categorySlug": "pizza",
+    "imagePath": "/assets/food/pizza/Paneer Tikka Pizza.png",
+    "prompt": "Paneer Tikka Pizza - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "pizza-206",
+    "name": "Peri Peri Pizza",
+    "slug": "peri-peri-pizza",
+    "category": "Pizza",
+    "categorySlug": "pizza",
+    "imagePath": "/assets/food/pizza/Peri Peri Pizza.png",
+    "prompt": "Peri Peri Pizza - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "combo-207",
+    "name": "Chola Bhatura",
+    "slug": "chola-bhatura",
+    "category": "Combos",
+    "categorySlug": "combos",
+    "imagePath": "/assets/food/combos/chola-bhatura.webp",
+    "prompt": "Chola Bhatura - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "combo-208",
+    "name": "Chola Kulcha",
+    "slug": "chola-kulcha",
+    "category": "Combos",
+    "categorySlug": "combos",
+    "imagePath": "/assets/food/combos/chola-kulcha.webp",
+    "prompt": "Chola Kulcha - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "combo-209",
+    "name": "Veg Fried Rice & Manchurian",
+    "slug": "veg-fried-rice-manchurian",
+    "category": "Combos",
+    "categorySlug": "combos",
+    "imagePath": "/assets/food/combos/veg-fried-rice-manchurian.webp",
+    "prompt": "Veg Fried Rice & Manchurian - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "combo-210",
+    "name": "Veg Noodles & Manchurian",
+    "slug": "veg-noodles-manchurian",
+    "category": "Combos",
+    "categorySlug": "combos",
+    "imagePath": "/assets/food/combos/veg-noodles-manchurian.webp",
+    "prompt": "Veg Noodles & Manchurian - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "combo-211",
+    "name": "Chilli Paneer & Fried Rice",
+    "slug": "chilli-paneer-fried-rice",
+    "category": "Combos",
+    "categorySlug": "combos",
+    "imagePath": "/assets/food/combos/chilli-paneer-fried-rice.webp",
+    "prompt": "Chilli Paneer & Fried Rice - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "combo-212",
+    "name": "Chilli Paneer & Noodles",
+    "slug": "chilli-paneer-noodles",
+    "category": "Combos",
+    "categorySlug": "combos",
+    "imagePath": "/assets/food/combos/chilli-paneer-noodles.webp",
+    "prompt": "Chilli Paneer & Noodles - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "combo-213",
+    "name": "Rajma Chawal",
+    "slug": "rajma-chawal",
+    "category": "Combos",
+    "categorySlug": "combos",
+    "imagePath": "/assets/food/combos/rajma-chawal.webp",
+    "prompt": "Rajma Chawal - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "combo-214",
+    "name": "Chola Chawal",
+    "slug": "chola-chawal",
+    "category": "Combos",
+    "categorySlug": "combos",
+    "imagePath": "/assets/food/combos/chola-chawal.webp",
+    "prompt": "Chola Chawal - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "combo-215",
+    "name": "Kadhi Chawal",
+    "slug": "kadhi-chawal",
+    "category": "Combos",
+    "categorySlug": "combos",
+    "imagePath": "/assets/food/combos/kadhi-chawal.webp",
+    "prompt": "Kadhi Chawal - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "combo-216",
+    "name": "Paneer Butter Masala with Stuffed Kulcha",
+    "slug": "paneer-butter-masala-with-stuffed-kulcha",
+    "category": "Combos",
+    "categorySlug": "combos",
+    "imagePath": "/assets/food/combos/paneer-butter-masala-with-stuffed-kulcha.webp",
+    "prompt": "Paneer Butter Masala with Stuffed Kulcha - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dessert-225",
+    "name": "Choice of Ice Cream",
+    "slug": "choice-of-ice-cream",
+    "category": "Sweets & Desserts",
+    "categorySlug": "sweets-desserts",
+    "imagePath": "/assets/food/sweets-desserts/choice-of-ice-cream.webp",
+    "prompt": "Choice of Ice Cream - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dessert-226",
+    "name": "Gulab Jamun",
+    "slug": "gulab-jamun",
+    "category": "Sweets & Desserts",
+    "categorySlug": "sweets-desserts",
+    "imagePath": "/assets/food/sweets-desserts/gulab-jamun.webp",
+    "prompt": "Gulab Jamun - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dessert-227",
+    "name": "Shahi Kheer",
+    "slug": "shahi-kheer",
+    "category": "Sweets & Desserts",
+    "categorySlug": "sweets-desserts",
+    "imagePath": "/assets/food/sweets-desserts/shahi-kheer.webp",
+    "prompt": "Shahi Kheer - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dessert-228",
+    "name": "Ice Cream with Hot Gulab Jamun",
+    "slug": "ice-cream-with-hot-gulab-jamun",
+    "category": "Sweets & Desserts",
+    "categorySlug": "sweets-desserts",
+    "imagePath": "/assets/food/sweets-desserts/ice-cream-with-hot-gulab-jamun.webp",
+    "prompt": "Ice Cream with Hot Gulab Jamun - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dessert-229",
+    "name": "Shahi Tukda",
+    "slug": "shahi-tukda",
+    "category": "Sweets & Desserts",
+    "categorySlug": "sweets-desserts",
+    "imagePath": "/assets/food/sweets-desserts/shahi-tukda.webp",
+    "prompt": "Shahi Tukda - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "dessert-230",
+    "name": "Moong Dal Halwa",
+    "slug": "moong-dal-halwa",
+    "category": "Sweets & Desserts",
+    "categorySlug": "sweets-desserts",
+    "imagePath": "/assets/food/sweets-desserts/moong-dal-halwa.webp",
+    "prompt": "Moong Dal Halwa - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "thali-231",
+    "name": "Normal Thali",
+    "slug": "normal-thali",
+    "category": "Thalis",
+    "categorySlug": "thalis",
+    "imagePath": "/assets/food/thalis/normal-thali.webp",
+    "prompt": "Normal Thali - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "thali-232",
+    "name": "Deluxe Thali",
+    "slug": "deluxe-thali",
+    "category": "Thalis",
+    "categorySlug": "thalis",
+    "imagePath": "/assets/food/thalis/deluxe-thali.webp",
+    "prompt": "Deluxe Thali - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "thali-233",
+    "name": "Banarsi Special Thali",
+    "slug": "banarsi-special-thali",
+    "category": "Thalis",
+    "categorySlug": "thalis",
+    "imagePath": "/assets/food/thalis/banarsi-special-thali.webp",
+    "prompt": "Banarsi Special Thali - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "nonveg-234",
+    "name": "Egg Bhurji",
+    "slug": "egg-bhurji",
+    "category": "Non Veg",
+    "categorySlug": "non-veg",
+    "imagePath": "/assets/food/nonveg/Egg Bhurji.png",
+    "prompt": "Egg Bhurji - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "nonveg-235",
+    "name": "Egg Curry",
+    "slug": "egg-curry",
+    "category": "Non Veg",
+    "categorySlug": "non-veg",
+    "imagePath": "/assets/food/nonveg/Egg Curry.png",
+    "prompt": "Egg Curry - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "nonveg-238",
+    "name": "Chicken Chowmein",
+    "slug": "chicken-chowmein",
+    "category": "Non Veg",
+    "categorySlug": "non-veg",
+    "imagePath": "/assets/food/non-veg/chicken-chowmein.webp",
+    "prompt": "Chicken Chowmein - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "nonveg-239",
+    "name": "Chicken Fried Rice",
+    "slug": "chicken-fried-rice",
+    "category": "Non Veg",
+    "categorySlug": "non-veg",
+    "imagePath": "/assets/food/nonveg/Chicken Fried Rice.png",
+    "prompt": "Chicken Fried Rice - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "nonveg-240",
+    "name": "Chicken Anda Fry",
+    "slug": "chicken-anda-fry",
+    "category": "Non Veg",
+    "categorySlug": "non-veg",
+    "imagePath": "/assets/food/nonveg/Chicken Anda Fry.png",
+    "prompt": "Chicken Anda Fry - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "nonveg-241",
+    "name": "Chicken Roll",
+    "slug": "chicken-roll",
+    "category": "Non Veg",
+    "categorySlug": "non-veg",
+    "imagePath": "/assets/food/nonveg/Chicken Roll.png",
+    "prompt": "Chicken Roll - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  },
+  {
+    "id": "nonveg-242",
+    "name": "Chicken Egg Roll",
+    "slug": "chicken-egg-roll",
+    "category": "Non Veg",
+    "categorySlug": "non-veg",
+    "imagePath": "/assets/food/nonveg/Chicken Egg Roll.png",
+    "prompt": "Chicken Egg Roll - Premium Indian culinary dish. Beautifully arranged and served on a matte black ceramic plate on a dark walnut wooden table. Ultra photorealistic food photography, premium restaurant presentation, warm ambient lighting, soft depth of field, DSLR quality, 8K resolution, natural garnish, no people, no text, no watermark, consistent camera angle."
+  }
+]

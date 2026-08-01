@@ -1,0 +1,56 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: yashgrand_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres123}
+      POSTGRES_DB: ${POSTGRES_DB:-yashgrand}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: yashgrand_app
+    restart: always
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres123}@postgres:5432/${POSTGRES_DB:-yashgrand}?schema=public
+      AUTH_SECRET: ${AUTH_SECRET:-super_secret_auth_key_yashgrand_2026_jwt_token}
+      NEXTAUTH_URL: ${NEXTAUTH_URL:-http://localhost:3000}
+      NODE_ENV: production
+      RAZORPAY_KEY_ID: ${RAZORPAY_KEY_ID:-rzp_live_yashgrand}
+      RAZORPAY_KEY_SECRET: ${RAZORPAY_KEY_SECRET:-rzp_live_secret_yashgrand}
+      SMTP_USER: ${SMTP_USER:-yashgrand03nov@gmail.com}
+      SMTP_PASS: ${SMTP_PASS:-mock-app-password}
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  nginx:
+    image: nginx:alpine
+    container_name: yashgrand_nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app
+
+volumes:
+  postgres_data:

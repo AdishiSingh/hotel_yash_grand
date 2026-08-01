@@ -1,0 +1,879 @@
+// Hotel Yash Grand — Production Prisma Database Schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ==========================================
+// ENUMS
+// ==========================================
+
+enum Role {
+  SUPER_ADMIN
+  MANAGER
+  RECEPTIONIST
+  RESTAURANT_MANAGER
+  KITCHEN_STAFF
+  CASHIER
+  ACCOUNTANT
+}
+
+enum RoomStatus {
+  AVAILABLE
+  OCCUPIED
+  MAINTENANCE
+  CLEANING
+  RESERVED
+  BLOCKED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CHECKED_IN
+  CHECKED_OUT
+  CANCELLED
+}
+
+enum OrderStatus {
+  PENDING
+  PREPARING
+  READY
+  SERVED
+  PAID
+  CANCELLED
+  NEW
+  IN_KITCHEN
+  COMPLETED
+}
+
+enum PaymentMethod {
+  CASH
+  UPI
+  CARD
+  NETBANKING
+  RAZORPAY
+  PAY_LATER
+  ROOM_CHARGE
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+}
+
+enum BanquetStatus {
+  NEW
+  CONTACTED
+  SITE_VISIT
+  BOOKED
+  COMPLETED
+  CANCELLED
+}
+
+enum EnquiryStatus {
+  UNREAD
+  IN_PROGRESS
+  RESOLVED
+  ARCHIVED
+}
+
+enum NotificationType {
+  INFO
+  SUCCESS
+  WARNING
+  ALERT
+}
+
+enum ItemType {
+  VEG
+  NON_VEG
+  EGG
+  BEVERAGE
+}
+
+// ==========================================
+// MODELS
+// ==========================================
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  password      String?
+  role          Role      @default(MANAGER)
+  phone         String?
+  image         String?
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts      Account[]
+  sessions      Session[]
+  auditLogs     AuditLog[]
+
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String?
+  customerId        String?
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user     User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  customer Customer? @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([customerId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+model Customer {
+  id                 String   @id @default(cuid())
+  name               String
+  phone              String   @unique
+  email              String?  @unique
+  passwordHash       String?
+  provider           String?  @default("credentials")
+  avatar             String?
+  address            String?
+  city               String?
+  state              String?
+  pincode            String?
+  idProofType        String?
+  idProofNumber      String?
+  favouriteRoom      String?
+  specialRequests    String?
+  preferredFloor     String?
+  preferredCheckInTime String?
+  savedGuests        Json?    @default("[]")
+  isEmailVerified    Boolean  @default(false)
+  isPhoneVerified    Boolean  @default(false)
+  isActive           Boolean  @default(true)
+  lastLogin          DateTime?
+  totalSpent         Float    @default(0)
+  visitCount         Int      @default(1)
+  totalNights        Int      @default(0)
+  loyaltyPoints      Int      @default(0)
+  lastVisit          DateTime @default(now())
+  favouriteDishes    String[] @default([])
+  isReturning        Boolean  @default(false)
+  notes              String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  orders             RestaurantOrder[]
+  roomBookings       RoomBooking[]
+  banquetBookings    BanquetBooking[]
+  bookingRequests    BookingRequest[]
+  sessions           CustomerSession[]
+  accounts           Account[]
+  passwordResets     PasswordReset[]
+  emailVerifications EmailVerification[]
+  notifications      Notification[]
+
+  @@index([phone])
+  @@index([email])
+  @@map("customers")
+}
+
+model CustomerSession {
+  id           String   @id @default(cuid())
+  customerId   String
+  sessionToken String   @unique
+  ipAddress    String?
+  userAgent    String?
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+
+  customer     Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([customerId])
+  @@index([sessionToken])
+  @@map("customer_sessions")
+}
+
+model PasswordReset {
+  id         String    @id @default(cuid())
+  customerId String
+  token      String    @unique
+  expiresAt  DateTime
+  usedAt     DateTime?
+  createdAt  DateTime  @default(now())
+
+  customer   Customer  @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([customerId])
+  @@index([token])
+  @@map("password_resets")
+}
+
+model EmailVerification {
+  id         String    @id @default(cuid())
+  customerId String
+  token      String    @unique
+  expiresAt  DateTime
+  verifiedAt DateTime?
+  createdAt  DateTime  @default(now())
+
+  customer   Customer  @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([customerId])
+  @@index([token])
+  @@map("email_verifications")
+}
+
+model Room {
+  id            String     @id @default(cuid())
+  roomNumber    String     @unique
+  type          String
+  floor         Int        @default(1)
+  pricePerNight Float
+  capacity      Int        @default(2)
+  status        RoomStatus @default(AVAILABLE)
+  amenities     String[]   @default([])
+  description   String?
+  images        String[]   @default([])
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  bookings      RoomBooking[]
+
+  @@index([status])
+  @@index([type])
+  @@map("rooms")
+}
+
+model RoomBooking {
+  id                  String        @id @default(cuid())
+  bookingId           String        @unique
+  roomId              String
+  customerId          String
+  checkIn             DateTime
+  checkOut            DateTime
+  guests              Int           @default(1)
+  adults              Int           @default(1)
+  children            Int           @default(0)
+  totalAmount         Float
+  advancePaid         Float         @default(0)
+  status              BookingStatus @default(CONFIRMED)
+  specialRequests     String?
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  room                Room          @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  customer            Customer      @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  payments            Payment[]
+
+  @@index([roomId])
+  @@index([customerId])
+  @@index([checkIn, checkOut])
+  @@index([status])
+  @@map("room_bookings")
+}
+
+model BookingRequest {
+  id                 String    @id @default(cuid())
+  requestId          String    @unique
+  type               String    @default("ROOM") // ROOM or BANQUET
+  customerId         String?
+  guestName          String
+  mobile             String
+  email              String?
+  roomType           String?
+  eventType          String?
+  checkIn            DateTime?
+  checkOut           DateTime?
+  eventDate          DateTime?
+  eventTime          String?
+  hallName           String?
+  adults             Int       @default(1)
+  children           Int       @default(0)
+  guestsCount        Int?
+  preferredFloor     String?
+  arrivalTime        String?
+  celebrationType    String?
+  specialRequest     String?
+  status             String    @default("PENDING") // PENDING, CONTACTED, NEGOTIATION, APPROVED, PAYMENT_PENDING, PAYMENT_VERIFIED, CONFIRMED, CHECKED_IN, CHECKED_OUT, COMPLETED, REJECTED, CANCELLED
+  requestedAt        DateTime  @default(now())
+  approvedAt         DateTime?
+  approvedBy         String?
+  managerRemarks     String?
+  rejectionReason    String?
+  paymentStatus      String    @default("PENDING") // PENDING, PARTIAL, PAID
+  advanceAmount      Float     @default(0)
+  totalAmount        Float     @default(0)
+  assignedRoomNumber String?
+  assignedManager    String?   @default("Manager A - Front Desk")
+  assignedManagerRole String?  @default("RECEPTION")
+  followUpAt         DateTime?
+  isFollowUpRequired Boolean   @default(false)
+  guestPortalToken   String?   @unique @default(cuid())
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  customer          Customer?          @relation(fields: [customerId], references: [id], onDelete: SetNull)
+  communicationLogs CommunicationLog[]
+  managerNotes      ManagerNote[]
+
+  @@index([status])
+  @@index([mobile])
+  @@index([requestedAt])
+  @@map("booking_requests")
+}
+
+model CommunicationLog {
+  id           String          @id @default(cuid())
+  requestId    String?
+  bookingId    String?
+  managerName  String
+  channel      String          // CALL, WHATSAPP, EMAIL, QUOTATION, LOCATION, INVOICE
+  duration     Int             @default(0)
+  status       String          @default("COMPLETED")
+  notes        String?
+  createdAt    DateTime        @default(now())
+
+  request      BookingRequest? @relation(fields: [requestId], references: [id], onDelete: Cascade)
+
+  @@index([requestId])
+  @@index([channel])
+  @@map("communication_logs")
+}
+
+model ManagerNote {
+  id           String          @id @default(cuid())
+  requestId    String?
+  bookingId    String?
+  author       String
+  category     String          @default("GENERAL") // VIP, LATE_ARRIVAL, DIETARY, PICKUP, SPECIAL
+  content      String
+  createdAt    DateTime        @default(now())
+
+  request      BookingRequest? @relation(fields: [requestId], references: [id], onDelete: Cascade)
+
+  @@index([requestId])
+  @@map("manager_notes")
+}
+
+model Category {
+  id          String     @id @default(cuid())
+  name        String     @unique
+  slug        String?    @unique
+  icon        String?
+  description String?
+  order       Int        @default(0)
+  isActive    Boolean    @default(true)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  menuItems   MenuItem[]
+
+  @@map("categories")
+}
+
+model MenuItem {
+  id              String      @id @default(cuid())
+  name            String
+  description     String?
+  price           Float
+  categoryId      String
+  type            ItemType    @default(VEG)
+  isAvailable     Boolean     @default(true)
+  isChefSpecial   Boolean     @default(false)
+  isBestSeller    Boolean     @default(false)
+  isRecommended   Boolean     @default(false)
+  image           String?
+  preparationTime String?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  category        Category    @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  orderItems      OrderItem[]
+
+  @@index([categoryId])
+  @@index([isAvailable])
+  @@map("menu_items")
+}
+
+model RestaurantTable {
+  id          String            @id @default(cuid())
+  tableNumber Int               @unique
+  token       String            @unique
+  isActive    Boolean           @default(true)
+  expiresAt   DateTime?
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  orders      RestaurantOrder[]
+
+  @@map("restaurant_tables")
+}
+
+model RestaurantOrder {
+  id            String           @id @default(cuid())
+  orderId       String           @unique
+  tableNumber   String
+  tableId       String?
+  table         RestaurantTable? @relation(fields: [tableId], references: [id], onDelete: SetNull)
+  customerId    String?
+  customerName  String           @default("Guest")
+  customerPhone String?
+  totalItems    Int
+  subtotal      Float
+  tax           Float            @default(0)
+  discount      Float            @default(0)
+  grandTotal    Float
+  status        OrderStatus      @default(PENDING)
+  paymentMethod PaymentMethod    @default(CASH)
+  paymentStatus PaymentStatus    @default(PENDING)
+  kotPrinted    Boolean          @default(false)
+  notes         String?
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+
+  customer      Customer?        @relation(fields: [customerId], references: [id], onDelete: SetNull)
+  items         OrderItem[]
+  bill          Bill?
+  payments      Payment[]
+
+  @@index([tableNumber])
+  @@index([tableId])
+  @@index([status])
+  @@index([createdAt])
+  @@map("restaurant_orders")
+}
+
+model OrderItem {
+  id                  String          @id @default(cuid())
+  orderId             String
+  menuItemId          String?
+  itemName            String
+  quantity            Int
+  price               Float
+  variantLabel        String?
+  specialInstructions String?
+
+  order               RestaurantOrder @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  menuItem            MenuItem?       @relation(fields: [menuItemId], references: [id], onDelete: SetNull)
+
+  @@index([orderId])
+  @@index([menuItemId])
+  @@map("order_items")
+}
+
+model Payment {
+  id                String           @id @default(cuid())
+  paymentId         String           @unique @default(cuid())
+  transactionId     String           @unique @default(cuid())
+  invoiceNumber     String?          @unique
+  orderId           String?
+  bookingId         String?
+  amount            Float
+  paymentMethod     PaymentMethod
+  paymentStatus     PaymentStatus    @default(COMPLETED)
+  gatewayRef        String?
+  razorpayOrderId   String?
+  razorpayPaymentId String?
+  razorpaySignature String?
+  refundAmount      Float            @default(0)
+  refundStatus      String           @default("NO_REFUND")
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+
+  order             RestaurantOrder? @relation(fields: [orderId], references: [id], onDelete: SetNull)
+  booking           RoomBooking?     @relation(fields: [bookingId], references: [id], onDelete: SetNull)
+
+  @@index([orderId])
+  @@index([bookingId])
+  @@index([paymentId])
+  @@index([razorpayOrderId])
+  @@map("payments")
+}
+
+model Bill {
+  id             String          @id @default(cuid())
+  billNumber     String          @unique
+  orderId        String          @unique
+  amount         Float
+  gstAmount      Float
+  discountAmount Float           @default(0)
+  grandTotal     Float
+  paymentMethod  PaymentMethod
+  issuedAt       DateTime        @default(now())
+
+  order          RestaurantOrder @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@map("bills")
+}
+
+model Review {
+  id         String   @id @default(cuid())
+  author     String
+  rating     Int
+  comment    String
+  reply      String?
+  isFeatured Boolean  @default(false)
+  source     String?  @default("Google")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("reviews")
+}
+
+model Inventory {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  category      String
+  department    String   @default("KITCHEN") // KITCHEN, RESTAURANT, HOUSEKEEPING, AMENITIES, LAUNDRY, STORE_ROOM
+  quantity      Float
+  unit          String
+  minThreshold  Float
+  maxThreshold  Float    @default(500.0)
+  reorderLevel  Float    @default(20.0)
+  batchNumber   String?
+  expiryDate    DateTime?
+  supplier      String?
+  costPerUnit   Float?
+  lastRestocked DateTime @default(now())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  movements     StockMovement[]
+
+  @@index([category])
+  @@index([department])
+  @@map("inventory")
+}
+
+model Supplier {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  contactPerson String?
+  phone         String
+  email         String?
+  address       String?
+  gstin         String?
+  category      String   @default("General")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  purchaseOrders PurchaseOrder[]
+
+  @@map("suppliers")
+}
+
+model PurchaseOrder {
+  id          String   @id @default(cuid())
+  poNumber    String   @unique
+  supplierId  String
+  status      String   @default("PENDING") // PENDING, APPROVED, RECEIVED, CANCELLED
+  totalAmount Float
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  supplier    Supplier @relation(fields: [supplierId], references: [id], onDelete: Cascade)
+
+  @@index([supplierId])
+  @@map("purchase_orders")
+}
+
+model StockMovement {
+  id          String   @id @default(cuid())
+  inventoryId String
+  type        String   // IN, OUT, CONSUMPTION, WASTE
+  quantity    Float
+  reason      String?
+  batchNumber String?
+  createdAt   DateTime @default(now())
+
+  inventory   Inventory @relation(fields: [inventoryId], references: [id], onDelete: Cascade)
+
+  @@index([inventoryId])
+  @@map("stock_movements")
+}
+
+model BanquetBooking {
+  id                  String        @id @default(cuid())
+  enquiryId           String        @unique
+  customerId          String?
+  customerName        String
+  customerPhone       String
+  customerEmail       String?
+  eventType           String
+  guestsCount         Int
+  eventDate           DateTime
+  budget              Float?
+  specialRequirements String?
+  status              BanquetStatus @default(NEW)
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  customer            Customer?     @relation(fields: [customerId], references: [id], onDelete: SetNull)
+
+  @@index([eventDate])
+  @@index([status])
+  @@map("banquet_bookings")
+}
+
+model Employee {
+  id               String          @id @default(cuid())
+  employeeCode     String          @unique
+  name             String
+  email            String?         @unique
+  phone            String
+  department       String          // Reception, Restaurant, Kitchen, Housekeeping, Maintenance, Accounts, Management
+  designation      String
+  shift            String          @default("Morning") // Morning, Evening, Night, Flexible
+  salary           Float           @default(25000.0)
+  status           String          @default("ACTIVE") // ACTIVE, ON_LEAVE, TERMINATED
+  emergencyContact String?
+  biometricId      String?         @unique
+  joiningDate      DateTime        @default(now())
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+
+  attendances      Attendance[]
+  leaveRequests    LeaveRequest[]
+  payrolls         Payroll[]
+
+  @@index([department])
+  @@map("employees")
+}
+
+model Attendance {
+  id             String    @id @default(cuid())
+  employeeId     String
+  date           DateTime  @default(now())
+  clockIn        DateTime?
+  clockOut       DateTime?
+  status         String    @default("PRESENT") // PRESENT, ABSENT, LATE, HALF_DAY, LEAVE
+  overtimeHours  Float     @default(0.0)
+  biometricLogId String?
+  createdAt      DateTime  @default(now())
+
+  employee       Employee  @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  @@index([employeeId])
+  @@index([date])
+  @@map("attendances")
+}
+
+model LeaveRequest {
+  id         String   @id @default(cuid())
+  employeeId String
+  leaveType  String   // Casual, Sick, Paid, Emergency
+  startDate  DateTime
+  endDate    DateTime
+  reason     String
+  status     String   @default("PENDING") // PENDING, APPROVED, REJECTED
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  @@index([employeeId])
+  @@map("leave_requests")
+}
+
+model Payroll {
+  id            String   @id @default(cuid())
+  employeeId    String
+  month         Int      // 1-12
+  year          Int      // e.g. 2026
+  basicSalary   Float
+  allowances    Float    @default(0.0)
+  deductions    Float    @default(0.0)
+  netSalary     Float
+  paymentStatus String   @default("PAID") // PAID, PENDING
+  paidAt        DateTime @default(now())
+
+  employee      Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  @@index([employeeId])
+  @@map("payrolls")
+}
+
+model ContactEnquiry {
+  id        String        @id @default(cuid())
+  name      String
+  phone     String
+  email     String?
+  subject   String?
+  message   String
+  status    EnquiryStatus @default(UNREAD)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@map("contact_enquiries")
+}
+
+model Notification {
+  id         String           @id @default(cuid())
+  customerId String?
+  title      String
+  message    String
+  type       NotificationType @default(INFO)
+  isRead     Boolean          @default(false)
+  link       String?
+  createdAt  DateTime         @default(now())
+
+  customer   Customer?        @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([customerId])
+  @@map("notifications")
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  action    String
+  details   String
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@map("audit_logs")
+}
+
+model Settings {
+  id               String   @id @default("1")
+  hotelName        String   @default("HOTEL YASH GRAND")
+  gstNumber        String   @default("09AAAAA0000A1Z5")
+  officialPhone    String   @default("+91 91510 88115")
+  officialEmail    String   @default("yashgrand03nov@gmail.com")
+  address          String   @default("Adjacent to SMS College, Bypass Road, Varanasi, UP 221011")
+  restaurantTiming String   @default("07:00 AM - 11:00 PM")
+  taxPercentage    Float    @default(5.0)
+  currency         String   @default("INR")
+  updatedAt        DateTime @updatedAt
+
+  @@map("settings")
+}
+
+model Prediction {
+  id                String   @id @default(cuid())
+  targetModule      String   // OCCUPANCY, REVENUE, RESTAURANT, BANQUET, INVENTORY, CHURN, HOUSEKEEPING
+  predictionType    String   // FORECAST, PRICING, RISK, REORDER, WORKLOAD
+  predictedValue    String
+  confidenceScore   Float    // e.g. 92.5 (%)
+  explainableReason String
+  forecastDate      DateTime @default(now())
+  createdAt         DateTime @default(now())
+
+  @@index([targetModule])
+  @@index([forecastDate])
+  @@map("predictions")
+}
+
+// ==========================================
+// MANAGEMENT PORTAL FOUNDATION MODELS (PHASE 1)
+// ==========================================
+
+model ManagementUser {
+  id           String         @id @default(cuid())
+  name         String
+  email        String         @unique
+  phone        String?
+  passwordHash String
+  roleId       String
+  isActive     Boolean        @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  role          ManagementRole @relation(fields: [roleId], references: [id])
+  loginSessions LoginSession[]
+
+  @@map("management_users")
+}
+
+model ManagementRole {
+  id          String       @id @default(cuid())
+  name        String       @unique // SUPER_ADMIN, MANAGER, RECEPTION, RESTAURANT_MANAGER, ACCOUNTS
+  description String?
+  isSystem    Boolean      @default(false)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  users       ManagementUser[]
+  permissions RolePermission[]
+
+  @@map("management_roles")
+}
+
+model Permission {
+  id          String           @id @default(cuid())
+  name        String           @unique
+  module      String
+  description String?
+  createdAt   DateTime         @default(now())
+
+  roles       RolePermission[]
+
+  @@map("management_permissions")
+}
+
+model RolePermission {
+  roleId       String
+  permissionId String
+
+  role       ManagementRole @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission Permission     @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([roleId, permissionId])
+  @@map("management_role_permissions")
+}
+
+model LoginSession {
+  id           String         @id @default(cuid())
+  userId       String
+  token        String         @unique
+  ipAddress    String?
+  userAgent    String?
+  expiresAt    DateTime
+  createdAt    DateTime       @default(now())
+
+  user         ManagementUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("management_login_sessions")
+}

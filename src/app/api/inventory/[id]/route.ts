@@ -1,0 +1,35 @@
+import { NextResponse } from "next/server";
+import { InventoryService } from "@/services/inventory.service";
+import { ZodError } from "zod";
+
+export async function PATCH(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const { id } = await params;
+    const body = await request.json();
+    const updated = await InventoryService.updateInventoryItem(id, body);
+
+    return NextResponse.json({ success: true, message: "Inventory updated", data: updated });
+  } catch (error: any) {
+    if (error instanceof ZodError) {
+      return NextResponse.json({ success: false, error: "Validation error", details: (error as any).issues || (error as any).errors }, { status: 400 });
+    }
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  }
+}
+
+export async function DELETE(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const { id } = await params;
+    await InventoryService.deleteInventoryItem(id);
+
+    return NextResponse.json({ success: true, message: "Inventory item deleted" });
+  } catch (error: any) {
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  }
+}

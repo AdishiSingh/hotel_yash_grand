@@ -1,0 +1,22 @@
+{
+  "name": "Hotel Yash Grand Varanasi",
+  "short_name": "Yash Grand",
+  "description": "Premium luxury stay, dining, and wedding banquet venue in Varanasi.",
+  "theme_color": "#0F1115",
+  "background_color": "#0F1115",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/assets/outside view/WhatsApp Image 2026-07-11 at 11.26.29-6.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/assets/outside view/WhatsApp Image 2026-07-11 at 11.26.29-6.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
