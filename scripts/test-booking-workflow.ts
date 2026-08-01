@@ -13,7 +13,7 @@ async function runBookingWorkflowTest() {
     guestName: "Anand Sharma",
     mobile: "+91 98765 12345",
     email: "anand.sharma@example.com",
-    roomType: "Single Deluxe Room",
+    roomType: "Family Room",
     checkIn: new Date("2026-08-15"),
     checkOut: new Date("2026-08-18"),
     adults: 2,
