@@ -164,8 +164,6 @@ export function DineInOrderModal({
         const json = await response.json();
         if (!response.ok || !json.success) {
           console.error("Failed to persist order in PostgreSQL:", json);
-        } else {
-          console.log("✓ Order saved to PostgreSQL:", json.data);
         }
       } catch (e) {
         console.error("API POST /api/orders error:", e);
