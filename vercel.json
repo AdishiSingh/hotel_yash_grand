@@ -1,5 +1,16 @@
 {
+  "framework": "nextjs",
+  "buildCommand": "npx prisma generate && node scripts/scan-rooms.js && node scripts/scan-gallery.js && next build",
   "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
