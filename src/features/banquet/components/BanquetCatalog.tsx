@@ -15,11 +15,37 @@ export const BANQUET_CAPACITY_OPTIONS = [
   { value: "150-300", label: "150 - 300 Guests" },
 ];
 
+export const BANQUET_EVENT_TYPES = [
+  "Wedding",
+  "Reception",
+  "Engagement",
+  "Birthday Party",
+  "Anniversary",
+  "Corporate Meeting",
+  "Conference",
+  "Seminar",
+  "Kitty Party",
+  "Baby Shower",
+  "Ring Ceremony",
+  "Haldi Ceremony",
+  "Mehendi Ceremony",
+  "Sangeet Night",
+  "Other",
+] as const;
+
 export function BanquetCatalog() {
   const { setDrawerOpen } = useBookingStore();
   const { requireAuth } = useBookingGuard();
   const [activeEventTab, setActiveEventTab] = React.useState("weddings");
-  const [inquiryData, setInquiryData] = React.useState({ date: "", guestCount: "", name: "", phone: "", notes: "" });
+  const [inquiryData, setInquiryData] = React.useState({
+    name: "",
+    eventType: "",
+    otherEventType: "",
+    date: "",
+    guestCount: "",
+    phone: "",
+    notes: "",
+  });
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submitError, setSubmitError] = React.useState<string | null>(null);
   const [successRef, setSuccessRef] = React.useState<string | null>(null);
@@ -30,6 +56,16 @@ export function BanquetCatalog() {
     e.preventDefault();
     setSubmitError(null);
 
+    const effectiveEventType =
+      inquiryData.eventType === "Other"
+        ? inquiryData.otherEventType.trim()
+        : inquiryData.eventType;
+
+    if (!effectiveEventType) {
+      setSubmitError("Please select or specify your Event Type.");
+      return;
+    }
+
     requireAuth(async (customer) => {
       setIsSubmitting(true);
       try {
@@ -37,7 +73,7 @@ export function BanquetCatalog() {
           customerName: inquiryData.name || customer.name,
           customerPhone: inquiryData.phone || customer.phone,
           customerEmail: customer.email || undefined,
-          eventType: activeEvent.name,
+          eventType: effectiveEventType,
           eventDate: inquiryData.date,
           guestCapacity: inquiryData.guestCount,
           guestsCount: parseInt(inquiryData.guestCount?.split("-")[0] || "50", 10),
@@ -59,12 +95,21 @@ export function BanquetCatalog() {
         }
 
         const refNum = json.referenceNumber || json.banquet?.referenceNumber || json.banquet?.enquiryId || "YG-BQ-2026-001";
-        const whatsappUrl = json.whatsappUrl || `https://wa.me/919151088115?text=${encodeURIComponent(`Hello, I have submitted an inquiry (Ref: ${refNum}) for a ${activeEvent.name} at Hotel Yash Grand on ${inquiryData.date} for ${inquiryData.guestCount} guests. My name is ${payload.customerName}.`)}`;
+        const message = `Hello, I have submitted an inquiry (Ref: ${refNum}) for a ${effectiveEventType} at Hotel Yash Grand on ${inquiryData.date} for ${inquiryData.guestCount} guests. My name is ${payload.customerName}.`;
+        const whatsappUrl = json.whatsappUrl || `https://wa.me/919151088115?text=${encodeURIComponent(message)}`;
 
         // ONLY after successful DB save, open WhatsApp
         window.open(whatsappUrl, "_blank");
         setSuccessRef(refNum);
-        setInquiryData({ date: "", guestCount: "", name: "", phone: "", notes: "" });
+        setInquiryData({
+          name: "",
+          eventType: "",
+          otherEventType: "",
+          date: "",
+          guestCount: "",
+          phone: "",
+          notes: "",
+        });
       } catch (err: any) {
         console.error("Banquet enquiry error:", err);
         setSubmitError("Unable to submit enquiry. Please try again.");
@@ -211,24 +256,43 @@ export function BanquetCatalog() {
             </div>
           )}
 
-          <form onSubmit={handleInquiry} className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            <div className="relative">
+          <form onSubmit={handleInquiry} className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="relative col-span-1 sm:col-span-2">
               <label className="text-[10px] uppercase tracking-widest text-neutral-400 block mb-1">
-                Your Name
+                Your Full Name <span className="text-red-400">*</span>
               </label>
               <input
                 type="text"
                 className="w-full bg-transparent border-b border-gold/20 py-2.5 focus:outline-none focus:border-gold transition-colors text-sm"
                 value={inquiryData.name}
                 onChange={(e) => setInquiryData({ ...inquiryData, name: e.target.value })}
-                placeholder="Rakesh Sharma"
+                placeholder="e.g. Rakesh Sharma"
                 required
               />
             </div>
-            
+
             <div className="relative">
               <label className="text-[10px] uppercase tracking-widest text-neutral-400 block mb-1">
-                Event Date
+                Event Type <span className="text-red-400">*</span>
+              </label>
+              <select
+                className="w-full bg-transparent border-b border-gold/20 py-2.5 focus:outline-none focus:border-gold transition-colors text-sm cursor-pointer"
+                value={inquiryData.eventType}
+                onChange={(e) => setInquiryData({ ...inquiryData, eventType: e.target.value })}
+                required
+              >
+                <option value="" disabled className="bg-background text-foreground">Select Event Type</option>
+                {BANQUET_EVENT_TYPES.map((type) => (
+                  <option key={type} value={type} className="bg-background text-foreground">
+                    {type}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="relative">
+              <label className="text-[10px] uppercase tracking-widest text-neutral-400 block mb-1">
+                Event Date <span className="text-red-400">*</span>
               </label>
               <input
                 type="date"
@@ -239,9 +303,25 @@ export function BanquetCatalog() {
               />
             </div>
 
-            <div className="relative">
+            {inquiryData.eventType === "Other" && (
+              <div className="relative col-span-1 sm:col-span-2 animate-fade-in">
+                <label className="text-[10px] uppercase tracking-widest text-gold block mb-1">
+                  Please specify your event <span className="text-red-400">*</span>
+                </label>
+                <input
+                  type="text"
+                  className="w-full bg-transparent border-b border-gold py-2.5 focus:outline-none text-sm text-white placeholder-neutral-500"
+                  value={inquiryData.otherEventType}
+                  onChange={(e) => setInquiryData({ ...inquiryData, otherEventType: e.target.value })}
+                  placeholder="e.g. Award Gala, Product Launch, Fashion Show"
+                  required
+                />
+              </div>
+            )}
+
+            <div className="relative col-span-1 sm:col-span-2">
               <label className="text-[10px] uppercase tracking-widest text-neutral-400 block mb-1">
-                Guest Limit
+                Guest Limit <span className="text-red-400">*</span>
               </label>
               <select
                 className="w-full bg-transparent border-b border-gold/20 py-2.5 focus:outline-none focus:border-gold transition-colors text-sm cursor-pointer"
@@ -258,7 +338,7 @@ export function BanquetCatalog() {
               </select>
             </div>
 
-            <div className="sm:col-span-3 pt-6">
+            <div className="col-span-1 sm:col-span-2 pt-6">
               <Button
                 type="submit"
                 variant="accent"

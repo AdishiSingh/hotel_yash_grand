@@ -350,10 +350,21 @@ export function BanquetBookingForm() {
                   {...register("eventType")}
                   className="w-full bg-[#0F1115] border border-white/15 focus:border-[#C5A880] px-3.5 py-3 rounded-xl text-sm text-white outline-none cursor-pointer"
                 >
-                  <option value="Wedding Reception">Wedding Reception & Sangeet</option>
-                  <option value="Corporate Seminar">Corporate Seminar & Exhibition</option>
-                  <option value="Milestone Birthday">Milestone Birthday / Anniversary</option>
-                  <option value="Family Gala">Family Gala / Tilak Ceremony</option>
+                  <option value="Wedding">Wedding</option>
+                  <option value="Reception">Reception</option>
+                  <option value="Engagement">Engagement</option>
+                  <option value="Birthday Party">Birthday Party</option>
+                  <option value="Anniversary">Anniversary</option>
+                  <option value="Corporate Meeting">Corporate Meeting</option>
+                  <option value="Conference">Conference</option>
+                  <option value="Seminar">Seminar</option>
+                  <option value="Kitty Party">Kitty Party</option>
+                  <option value="Baby Shower">Baby Shower</option>
+                  <option value="Ring Ceremony">Ring Ceremony</option>
+                  <option value="Haldi Ceremony">Haldi Ceremony</option>
+                  <option value="Mehendi Ceremony">Mehendi Ceremony</option>
+                  <option value="Sangeet Night">Sangeet Night</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
 
