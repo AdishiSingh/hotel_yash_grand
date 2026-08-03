@@ -63,7 +63,7 @@ export const BANQUET_DATA: BanquetDetails = {
     {
       name: "Wedding Package",
       desc: "Full ballroom reservation, Stage setup, Bridal Suite, flower decors, and grand buffet coordinates.",
-      capacityRange: "300 - 500 Guests",
+      capacityRange: "150 - 300 Guests",
       pricePlaceholder: "Contact for Best Pricing"
     },
     {

@@ -9,6 +9,12 @@ import { useBookingGuard } from "@/context/BookingGuardContext";
 import { BANQUET_EVENTS, BANQUET_PACKAGES } from "@/shared/data/banquet";
 import { cn } from "@/lib/utils";
 
+export const BANQUET_CAPACITY_OPTIONS = [
+  { value: "50-100", label: "50 - 100 Guests" },
+  { value: "100-150", label: "100 - 150 Guests" },
+  { value: "150-300", label: "150 - 300 Guests" },
+];
+
 export function BanquetCatalog() {
   const { setDrawerOpen } = useBookingStore();
   const { requireAuth } = useBookingGuard();
@@ -190,9 +196,11 @@ export function BanquetCatalog() {
                 required
               >
                 <option value="" disabled className="bg-background text-foreground">Select Capacity</option>
-                <option value="50-150" className="bg-background text-foreground">50 - 150 Guests</option>
-                <option value="150-300" className="bg-background text-foreground">150 - 300 Guests</option>
-                <option value="300-500" className="bg-background text-foreground">300 - 500 Guests</option>
+                {BANQUET_CAPACITY_OPTIONS.map((opt) => (
+                  <option key={opt.value} value={opt.value} className="bg-background text-foreground">
+                    {opt.label}
+                  </option>
+                ))}
               </select>
             </div>
 
