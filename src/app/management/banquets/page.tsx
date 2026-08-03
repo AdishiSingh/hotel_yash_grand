@@ -293,13 +293,29 @@ export default function BanquetManagementPage() {
                       </span>
                     </td>
                     <td className="py-3.5 px-4 text-right">
-                      <button
-                        onClick={() => setSelectedEvent(r)}
-                        className="px-3 py-1.5 bg-[#DFBA73]/15 text-[#DFBA73] border border-[#DFBA73]/40 rounded font-semibold text-[11px] flex items-center gap-1 cursor-pointer ml-auto"
-                      >
-                        <Eye className="h-3.5 w-3.5" />
-                        <span>Event Profile</span>
-                      </button>
+                      <div className="flex items-center gap-1.5 justify-end">
+                        <button
+                          onClick={() => handleUpdateStatus(r.id, "BOOKED")}
+                          className="px-2 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded text-[10px] font-bold uppercase cursor-pointer"
+                          title="Confirm Event"
+                        >
+                          Confirm
+                        </button>
+                        <button
+                          onClick={() => handleUpdateStatus(r.id, "CANCELLED")}
+                          className="px-2 py-1 bg-red-600/80 hover:bg-red-500 text-white rounded text-[10px] font-bold uppercase cursor-pointer"
+                          title="Reject Request"
+                        >
+                          Reject
+                        </button>
+                        <button
+                          onClick={() => setSelectedEvent(r)}
+                          className="px-2 py-1 bg-[#DFBA73]/15 text-[#DFBA73] border border-[#DFBA73]/40 rounded font-semibold text-[10px] flex items-center gap-1 cursor-pointer"
+                        >
+                          <Eye className="h-3 w-3" />
+                          <span>View</span>
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))

@@ -126,12 +126,30 @@ export default function ErpBanquetPage() {
                           <span>WhatsApp</span>
                         </a>
 
+                        {enq.status !== "CONTACTED" && (
+                          <button
+                            onClick={() => updateStatus(enq.id, "CONTACTED")}
+                            className="px-2 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-sm text-[10px] font-bold uppercase tracking-wider cursor-pointer"
+                          >
+                            Contact
+                          </button>
+                        )}
+
                         {enq.status !== "BOOKED" && enq.status !== "CONFIRMED" && (
                           <button
                             onClick={() => updateStatus(enq.id, "BOOKED")}
-                            className="px-2.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-sm text-[10px] font-bold uppercase tracking-wider cursor-pointer"
+                            className="px-2 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-sm text-[10px] font-bold uppercase tracking-wider cursor-pointer"
                           >
                             Confirm
+                          </button>
+                        )}
+
+                        {enq.status !== "CANCELLED" && enq.status !== "REJECTED" && (
+                          <button
+                            onClick={() => updateStatus(enq.id, "CANCELLED")}
+                            className="px-2 py-1.5 bg-red-600/80 hover:bg-red-500 text-white rounded-sm text-[10px] font-bold uppercase tracking-wider cursor-pointer"
+                          >
+                            Reject
                           </button>
                         )}
                       </div>

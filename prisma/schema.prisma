@@ -71,6 +71,7 @@ enum PaymentStatus {
 
 enum BanquetStatus {
   NEW
+  PENDING
   CONTACTED
   SITE_VISIT
   BOOKED
@@ -633,16 +634,19 @@ model StockMovement {
 model BanquetBooking {
   id                  String        @id @default(cuid())
   enquiryId           String        @unique
+  referenceNumber     String?       @unique
   customerId          String?
   customerName        String
   customerPhone       String
   customerEmail       String?
   eventType           String
-  guestsCount         Int
+  guestsCount         Int           @default(50)
+  guestCapacity       String?
   eventDate           DateTime
   budget              Float?
+  notes               String?
   specialRequirements String?
-  status              BanquetStatus @default(NEW)
+  status              BanquetStatus @default(PENDING)
   createdAt           DateTime      @default(now())
   updatedAt           DateTime      @updatedAt
 

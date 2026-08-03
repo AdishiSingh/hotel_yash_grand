@@ -19,17 +19,58 @@ export function BanquetCatalog() {
   const { setDrawerOpen } = useBookingStore();
   const { requireAuth } = useBookingGuard();
   const [activeEventTab, setActiveEventTab] = React.useState("weddings");
-  const [inquiryData, setInquiryData] = React.useState({ date: "", guestCount: "", name: "" });
+  const [inquiryData, setInquiryData] = React.useState({ date: "", guestCount: "", name: "", phone: "", notes: "" });
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
+  const [successRef, setSuccessRef] = React.useState<string | null>(null);
 
   const activeEvent = BANQUET_EVENTS.find((e) => e.id === activeEventTab) || BANQUET_EVENTS[0];
 
   const handleInquiry = (e: React.FormEvent) => {
     e.preventDefault();
-    requireAuth((customer) => {
-      const message = `Hello, I'd like to inquire about hosting a ${activeEvent.name} at Hotel Yash Grand on ${inquiryData.date} for ${inquiryData.guestCount} guests. My name is ${inquiryData.name || customer.name}.`;
-      const whatsappUrl = `https://wa.me/919151088115?text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, "_blank");
-      setInquiryData({ date: "", guestCount: "", name: "" });
+    setSubmitError(null);
+
+    requireAuth(async (customer) => {
+      setIsSubmitting(true);
+      try {
+        const payload = {
+          customerName: inquiryData.name || customer.name,
+          customerPhone: inquiryData.phone || customer.phone,
+          customerEmail: customer.email || undefined,
+          eventType: activeEvent.name,
+          eventDate: inquiryData.date,
+          guestCapacity: inquiryData.guestCount,
+          guestsCount: parseInt(inquiryData.guestCount?.split("-")[0] || "50", 10),
+          notes: inquiryData.notes || undefined,
+        };
+
+        const res = await fetch("/api/management/banquets", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        const json = await res.json();
+
+        if (!res.ok || !json.success) {
+          setSubmitError(json.error || "Unable to submit enquiry. Please try again.");
+          setIsSubmitting(false);
+          return;
+        }
+
+        const refNum = json.referenceNumber || json.banquet?.referenceNumber || json.banquet?.enquiryId || "YG-BQ-2026-001";
+        const whatsappUrl = json.whatsappUrl || `https://wa.me/919151088115?text=${encodeURIComponent(`Hello, I have submitted an inquiry (Ref: ${refNum}) for a ${activeEvent.name} at Hotel Yash Grand on ${inquiryData.date} for ${inquiryData.guestCount} guests. My name is ${payload.customerName}.`)}`;
+
+        // ONLY after successful DB save, open WhatsApp
+        window.open(whatsappUrl, "_blank");
+        setSuccessRef(refNum);
+        setInquiryData({ date: "", guestCount: "", name: "", phone: "", notes: "" });
+      } catch (err: any) {
+        console.error("Banquet enquiry error:", err);
+        setSubmitError("Unable to submit enquiry. Please try again.");
+      } finally {
+        setIsSubmitting(false);
+      }
     }, inquiryData);
   };
 
@@ -157,6 +198,19 @@ export function BanquetCatalog() {
             </p>
           </div>
 
+          {submitError && (
+            <div className="mb-6 p-4 border border-red-500/30 bg-red-500/10 text-red-400 text-xs rounded-xl text-center font-medium">
+              {submitError}
+            </div>
+          )}
+
+          {successRef && (
+            <div className="mb-6 p-4 border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs rounded-xl text-center space-y-1">
+              <div className="font-bold">Banquet Enquiry Saved to Database</div>
+              <div className="font-mono text-[11px] text-white">Reference ID: {successRef}</div>
+            </div>
+          )}
+
           <form onSubmit={handleInquiry} className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             <div className="relative">
               <label className="text-[10px] uppercase tracking-widest text-neutral-400 block mb-1">
@@ -205,8 +259,14 @@ export function BanquetCatalog() {
             </div>
 
             <div className="sm:col-span-3 pt-6">
-              <Button type="submit" variant="accent" size="lg" className="w-full text-xs font-semibold py-4">
-                Verify Availability via WhatsApp
+              <Button
+                type="submit"
+                variant="accent"
+                size="lg"
+                disabled={isSubmitting}
+                className="w-full text-xs font-semibold py-4 disabled:opacity-50"
+              >
+                {isSubmitting ? "Saving to Database & Launching WhatsApp..." : "Verify Availability via WhatsApp"}
               </Button>
             </div>
           </form>

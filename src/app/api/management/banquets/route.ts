@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { BanquetService } from "@/services/banquet.service";
 
 export async function GET(req: NextRequest) {
   try {
@@ -85,6 +86,32 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(
       { success: false, error: error.message || "Failed to fetch banquet management data." },
       { status: 500 }
+    );
+  }
+}
+
+export async function POST(req: NextRequest) {
+  try {
+    const body = await req.json();
+    const banquet = await BanquetService.createBanquetBooking(body);
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: "Banquet enquiry successfully saved to database.",
+        banquet,
+        data: banquet,
+        referenceNumber: banquet.referenceNumber,
+        whatsappUrl: banquet.whatsappUrl,
+        whatsappMessage: banquet.whatsappMessage,
+      },
+      { status: 201 }
+    );
+  } catch (error: any) {
+    console.error("POST /api/management/banquets error:", error);
+    return NextResponse.json(
+      { success: false, error: error.message || "Unable to submit enquiry. Please try again." },
+      { status: 400 }
     );
   }
 }
