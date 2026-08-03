@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { signOut } from "next-auth/react";
 import { 
   User, 
   Calendar, 
@@ -37,6 +38,7 @@ export function CustomerNavbar({ customerName = "Valued Guest", customerEmail }:
   const handleLogout = async () => {
     setIsLoggingOut(true);
     try {
+      await signOut({ redirect: false });
       await fetch("/api/customer/auth/logout", { method: "POST" });
       router.push("/customer/login");
       router.refresh();

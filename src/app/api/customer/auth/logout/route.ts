@@ -13,13 +13,27 @@ export async function POST(req: NextRequest) {
       message: "Logged out successfully.",
     });
 
-    response.cookies.set(CUSTOMER_COOKIE_NAME, "", {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
-      expires: new Date(0),
-      path: "/",
-    });
+    const cookiesToClear = [
+      CUSTOMER_COOKIE_NAME,
+      "authjs.session-token",
+      "next-auth.session-token",
+      "__Secure-next-auth.session-token",
+      "authjs.csrf-token",
+      "next-auth.csrf-token",
+      "__Host-next-auth.csrf-token",
+      "authjs.callback-url",
+      "next-auth.callback-url",
+    ];
+
+    for (const cookieName of cookiesToClear) {
+      response.cookies.set(cookieName, "", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        expires: new Date(0),
+        path: "/",
+      });
+    }
 
     return response;
   } catch (error: any) {

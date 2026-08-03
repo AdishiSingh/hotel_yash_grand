@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { signOut } from "next-auth/react";
 import { Loader2 } from "lucide-react";
 
 export default function CustomerLogoutPage() {
@@ -10,11 +11,12 @@ export default function CustomerLogoutPage() {
   useEffect(() => {
     async function logout() {
       try {
+        await signOut({ redirect: false });
         await fetch("/api/customer/auth/logout", { method: "POST" });
       } catch (err) {
         console.error("Logout error:", err);
       } finally {
-        router.push("/customer/login");
+        router.replace("/customer/login");
         router.refresh();
       }
     }

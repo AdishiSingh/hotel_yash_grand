@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { signOut } from "next-auth/react";
 import { BookingAuthModal } from "@/components/booking/BookingAuthModal";
 import { useBookingStore } from "@/features/booking/store/use-booking-store";
 
@@ -69,6 +70,7 @@ export function BookingGuardProvider({ children }: { children: ReactNode }) {
 
   const logoutCustomer = async () => {
     try {
+      await signOut({ redirect: false });
       await fetch("/api/customer/auth/logout", { method: "POST" });
     } catch (err) {
       console.error("Logout error:", err);
@@ -77,7 +79,7 @@ export function BookingGuardProvider({ children }: { children: ReactNode }) {
       setPendingBooking(null);
       setPendingFormData(null);
       useBookingStore.getState().resetBooking();
-      window.location.href = "/";
+      window.location.href = "/customer/login";
     }
   };
 
