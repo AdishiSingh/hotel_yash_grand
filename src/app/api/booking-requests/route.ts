@@ -41,15 +41,22 @@ export async function POST(req: NextRequest) {
     const session = await getCustomerSessionFromRequest(req).catch(() => null);
     const body = await req.json();
 
-    if (!body.guestName) body.guestName = body.name || session?.customer?.name || "Valued Guest";
+    if (session && session.customer) {
+      body.customerId = session.customer.id;
+      body.guestName = body.guestName || session.customer.name;
+      body.mobile = body.mobile || session.customer.phone;
+      if (session.customer.email) body.email = body.email || session.customer.email;
+    }
+
+    if (!body.guestName || String(body.guestName).trim() === "") {
+      return NextResponse.json(
+        { success: false, error: "Guest name is required for booking request." },
+        { status: 400 }
+      );
+    }
+
     if (!body.checkIn && body.checkInDate) body.checkIn = body.checkInDate;
     if (!body.checkOut && body.checkOutDate) body.checkOut = body.checkOutDate;
-
-    if (session && session.customer) {
-      if (!body.customerId) body.customerId = session.customer.id;
-      if (!body.mobile) body.mobile = session.customer.phone;
-      if (!body.email && session.customer.email) body.email = session.customer.email;
-    }
 
     const result = await BookingRequestService.createRequest(body);
 

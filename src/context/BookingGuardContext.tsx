@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { BookingAuthModal } from "@/components/booking/BookingAuthModal";
+import { useBookingStore } from "@/features/booking/store/use-booking-store";
 
 interface Customer {
   id: string;
@@ -49,11 +50,13 @@ export function BookingGuardProvider({ children }: { children: ReactNode }) {
         return json.customer;
       } else {
         setCustomer(null);
+        useBookingStore.getState().resetBooking();
         return null;
       }
     } catch (err) {
       console.error("Session refresh error:", err);
       setCustomer(null);
+      useBookingStore.getState().resetBooking();
       return null;
     } finally {
       setLoading(false);
@@ -73,6 +76,7 @@ export function BookingGuardProvider({ children }: { children: ReactNode }) {
       setCustomer(null);
       setPendingBooking(null);
       setPendingFormData(null);
+      useBookingStore.getState().resetBooking();
       window.location.href = "/";
     }
   };

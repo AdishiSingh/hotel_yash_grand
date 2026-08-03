@@ -68,7 +68,7 @@ export function BookingAuthModal({
 
     try {
       const googleEmail = initialGuestEmail || regEmail || (loginIdentifier.includes("@") ? loginIdentifier : `guest.${Date.now().toString().slice(-6)}@gmail.com`);
-      const googleName = initialGuestName || regName || "Google Guest";
+      const googleName = regName || initialGuestName || (googleEmail.includes("@") ? googleEmail.split("@")[0] : "Guest Profile");
 
       const res = await fetch("/api/customer/auth/google", {
         method: "POST",

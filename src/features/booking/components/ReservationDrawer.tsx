@@ -61,22 +61,42 @@ export function ReservationDrawer() {
     resolver: zodResolver(bookingSchema),
   });
 
-  // Sync state values on input change & auto-fill customer profile if available
+  // Sync state values on drawer open & auto-fill ONLY from authenticated customer profile
   React.useEffect(() => {
     if (isDrawerOpen) {
-      setValue("guestName", guestName || customer?.name || "");
-      setValue("guestEmail", guestEmail || customer?.email || "");
-      setValue("guestPhone", guestPhone || customer?.phone || "");
-      setValue("specialRequests", specialRequests || "");
       if (customer) {
+        const name = customer.name || "";
+        const email = customer.email || "";
+        const phone = customer.phone || "";
+        const requests = customer.specialRequests || "";
+
+        setValue("guestName", name);
+        setValue("guestEmail", email);
+        setValue("guestPhone", phone);
+        setValue("specialRequests", requests);
+
         updateFields({
-          guestName: guestName || customer.name || "",
-          guestEmail: guestEmail || customer.email || "",
-          guestPhone: guestPhone || customer.phone || "",
+          guestName: name,
+          guestEmail: email,
+          guestPhone: phone,
+          specialRequests: requests,
+        });
+      } else {
+        // Unauthenticated user: Clear all guest information to prevent leaking previous user data
+        setValue("guestName", "");
+        setValue("guestEmail", "");
+        setValue("guestPhone", "");
+        setValue("specialRequests", "");
+
+        updateFields({
+          guestName: "",
+          guestEmail: "",
+          guestPhone: "",
+          specialRequests: "",
         });
       }
     }
-  }, [isDrawerOpen, guestName, guestEmail, guestPhone, specialRequests, customer, setValue, updateFields]);
+  }, [isDrawerOpen, customer, setValue, updateFields]);
 
   if (!isDrawerOpen) return null;
 
