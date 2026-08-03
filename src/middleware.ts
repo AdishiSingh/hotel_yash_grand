@@ -9,7 +9,11 @@ export function middleware(request: NextRequest) {
 
   // 1. CUSTOMER PORTAL AUTH & ROUTE PROTECTION
   if (pathname.startsWith("/customer")) {
-    const customerToken = request.cookies.get(CUSTOMER_COOKIE_NAME)?.value;
+    const customerToken =
+      request.cookies.get(CUSTOMER_COOKIE_NAME)?.value ||
+      request.cookies.get("authjs.session-token")?.value ||
+      request.cookies.get("next-auth.session-token")?.value ||
+      request.cookies.get("__Secure-next-auth.session-token")?.value;
 
     const authPages = [
       "/customer/login",

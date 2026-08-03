@@ -1,21 +1,30 @@
 "use client";
 
-import React, { useState, Suspense } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import { useBookingGuard } from "@/context/BookingGuardContext";
 import { Crown, Lock, Mail, Phone, Eye, EyeOff, ArrowRight, ShieldCheck, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
 function CustomerLoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/customer/dashboard";
+  const { data: nextAuthSession, status: nextAuthStatus } = useSession();
+  const { isAuthenticated, customer } = useBookingGuard();
 
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (nextAuthStatus === "authenticated" || isAuthenticated || customer) {
+      router.replace(callbackUrl);
+    }
+  }, [nextAuthStatus, isAuthenticated, customer, callbackUrl, router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

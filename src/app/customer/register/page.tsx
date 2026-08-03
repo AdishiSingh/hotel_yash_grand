@@ -1,13 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import { useBookingGuard } from "@/context/BookingGuardContext";
 import { Crown, User, Mail, Phone, Lock, Eye, EyeOff, ArrowRight, ShieldCheck, AlertCircle, Loader2, CheckCircle2 } from "lucide-react";
 
 export default function CustomerRegisterPage() {
   const router = useRouter();
+  const { data: nextAuthSession, status: nextAuthStatus } = useSession();
+  const { isAuthenticated, customer } = useBookingGuard();
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -17,6 +20,12 @@ export default function CustomerRegisterPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (nextAuthStatus === "authenticated" || isAuthenticated || customer) {
+      router.replace("/customer/dashboard");
+    }
+  }, [nextAuthStatus, isAuthenticated, customer, router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
