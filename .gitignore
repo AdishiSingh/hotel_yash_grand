@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# Dependencies
 /node_modules
 /.pnp
 .pnp.*
@@ -10,42 +10,50 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
+# Environment variables & secrets
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.*.local
+.env*.local
+.env*
+!.env.example
 
-# next.js
+# Next.js & Build Outputs
 /.next/
 /out/
+/dist/
+/build/
 
-# production
-/build
+# Testing & Coverage
+/coverage/
+/playwright-report/
+/test-results/
 
-# misc
-.DS_Store
-*.pem
+# Vercel
+.vercel
 
-# debug
+# Logs & Debug
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committed examples)
-.env*
-!.env.example
+# OS & Editor Files
+.DS_Store
+*.pem
+.vscode/settings.json
+.Rhistory
 
-# vercel
-.vercel
-
-# typescript
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
 
-# test & scratch artifacts
-.Rhistory
+# Test & Scratch Artifacts
 /scratch/
-/playwright-report/
-/test-results/
 
-# comfyui local installation
+# Local Installations & Extras
 /comfyui/
