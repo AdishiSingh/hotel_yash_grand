@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 import { Crown, User, Mail, Phone, Lock, Eye, EyeOff, ArrowRight, ShieldCheck, AlertCircle, Loader2, CheckCircle2 } from "lucide-react";
 
 export default function CustomerRegisterPage() {
@@ -56,31 +57,20 @@ export default function CustomerRegisterPage() {
     }
   };
 
-  const handleGoogleAuth = async () => {
+  const handleGoogleAuth = async (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setLoading(true);
     setError(null);
 
     try {
-      if (email.trim()) {
-        const res = await fetch("/api/customer/auth/google", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email,
-            name: name || undefined,
-            callbackUrl: "/customer/dashboard",
-          }),
-        });
-        const data = await res.json();
-        if (res.ok && data.success) {
-          router.push("/customer/dashboard");
-          router.refresh();
-          return;
-        }
-      }
-      window.location.href = `/api/auth/signin/google?callbackUrl=${encodeURIComponent("/customer/dashboard")}`;
+      await signIn("google", { callbackUrl: "/customer/dashboard" });
     } catch (err: any) {
-      window.location.href = `/api/auth/signin/google?callbackUrl=${encodeURIComponent("/customer/dashboard")}`;
+      console.error("Google OAuth error:", err);
+      setError(err?.message || "Failed to launch Google Sign-In.");
+      setLoading(false);
     }
   };
 

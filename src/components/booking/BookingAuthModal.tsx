@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { signIn } from "next-auth/react";
 import { 
   Crown, 
   X, 
@@ -62,37 +63,19 @@ export function BookingAuthModal({
 
   if (!isOpen) return null;
 
-  const handleGoogleAuth = async () => {
+  const handleGoogleAuth = async (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setLoading(true);
     setError(null);
 
     try {
-      const googleEmail = initialGuestEmail || regEmail || (loginIdentifier.includes("@") ? loginIdentifier : `guest.${Date.now().toString().slice(-6)}@gmail.com`);
-      const googleName = regName || initialGuestName || (googleEmail.includes("@") ? googleEmail.split("@")[0] : "Guest Profile");
-
-      const res = await fetch("/api/customer/auth/google", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: googleEmail,
-          name: googleName,
-          avatar: "https://lh3.googleusercontent.com/a/default-user=s96-c",
-          googleId: `google-sub-${googleEmail.replace(/[^a-z0-9]/gi, "")}`,
-        }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok || !data.success) {
-        setError(data.error || "Google authentication failed.");
-        setLoading(false);
-        return;
-      }
-
-      onSuccess(data.customer);
+      await signIn("google", { callbackUrl: "/" });
     } catch (err: any) {
       console.error("Google Auth error:", err);
-      setError(err.message || "Google authentication service error.");
+      setError(err?.message || "Google authentication service error.");
       setLoading(false);
     }
   };

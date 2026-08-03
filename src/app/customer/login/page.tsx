@@ -3,6 +3,7 @@
 import React, { useState, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import { signIn } from "next-auth/react";
 import { Crown, Lock, Mail, Phone, Eye, EyeOff, ArrowRight, ShieldCheck, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
 function CustomerLoginForm() {
@@ -44,30 +45,20 @@ function CustomerLoginForm() {
     }
   };
 
-  const handleGoogleAuth = async () => {
+  const handleGoogleAuth = async (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setLoading(true);
     setError(null);
 
     try {
-      if (identifier.includes("@")) {
-        const res = await fetch("/api/customer/auth/google", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: identifier,
-            callbackUrl,
-          }),
-        });
-        const data = await res.json();
-        if (res.ok && data.success) {
-          router.push(callbackUrl);
-          router.refresh();
-          return;
-        }
-      }
-      window.location.href = `/api/auth/signin/google?callbackUrl=${encodeURIComponent(callbackUrl)}`;
+      await signIn("google", { callbackUrl });
     } catch (err: any) {
-      window.location.href = `/api/auth/signin/google?callbackUrl=${encodeURIComponent(callbackUrl)}`;
+      console.error("Google OAuth error:", err);
+      setError(err?.message || "Failed to launch Google Sign-In.");
+      setLoading(false);
     }
   };
 
