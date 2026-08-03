@@ -41,6 +41,6 @@ export const CONTACT_DATA: ContactDetails = {
   googleMapsDirections: "https://maps.app.goo.gl/fK8jYv7HqgQ2Dk2V7",
   socials: {
     facebook: "https://facebook.com/hotelyashgrand",
-    instagram: "https://instagram.com/hotelyashgrand"
+    instagram: "https://www.instagram.com/yash_grand_?igsh=dXNtcjNwcmpwNThy"
   }
 };

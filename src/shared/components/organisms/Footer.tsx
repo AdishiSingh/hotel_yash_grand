@@ -240,7 +240,7 @@ export function Footer() {
               <h5 className="text-[9px] uppercase tracking-widest text-[#C8A97E] font-bold">Social Connect</h5>
               <div className="flex gap-2.5 text-neutral-400">
                 <a 
-                  href="https://www.instagram.com/yashgrand03nov?igsh=MXNjOTRoajMxdWF4cg==" 
+                  href="https://www.instagram.com/yash_grand_?igsh=dXNtcjNwcmpwNThy" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="h-11 w-11 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-sm bg-neutral-900/60 border border-white/5 hover:border-gold/40 hover:text-gold hover:-translate-y-0.5 transition-all duration-[250ms] cursor-pointer" 

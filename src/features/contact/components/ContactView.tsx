@@ -84,7 +84,7 @@ export function ContactView() {
           </a>
 
           <a
-            href="https://www.instagram.com/yashgrand03nov?igsh=MXNjOTRoajMxdWF4cg=="
+            href="https://www.instagram.com/yash_grand_?igsh=dXNtcjNwcmpwNThy"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit HOTEL YASH GRAND on Instagram"
