@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 export type BookingType = "room" | "dining" | "banquet";
-export type WorkflowStep = "form" | "summary" | "success";
+export type WorkflowStep = "form" | "summary" | "success" | "error";
 
 export interface BookingState {
   // Config & Steps

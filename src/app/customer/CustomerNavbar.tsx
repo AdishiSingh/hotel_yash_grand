@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
+import { useScrollPosition } from "@/hooks/use-scroll-position";
+import { cn } from "@/lib/utils";
 import { 
   User, 
   Calendar, 
@@ -25,8 +27,10 @@ interface CustomerNavbarProps {
 export function CustomerNavbar({ customerName = "Valued Guest", customerEmail }: CustomerNavbarProps) {
   const pathname = usePathname();
   const router = useRouter();
+  const scrollY = useScrollPosition();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const isScrolled = scrollY > 20;
 
   const navLinks = [
     { name: "Dashboard", href: "/customer/dashboard", icon: LayoutDashboard },
@@ -50,7 +54,14 @@ export function CustomerNavbar({ customerName = "Valued Guest", customerEmail }:
   };
 
   return (
-    <header className="bg-[#0B0D10]/95 backdrop-blur-md border-b border-[#C5A880]/20 sticky top-0 z-50 transition-all">
+    <header
+      className={cn(
+        "sticky top-0 left-0 right-0 z-50 w-full transition-all duration-300 ease-in-out",
+        isScrolled
+          ? "bg-[#0B0D10]/95 backdrop-blur-xl border-b border-[#C5A880]/30 shadow-[0_12px_36px_rgba(0,0,0,0.35)]"
+          : "bg-[#0B0D10]/80 backdrop-blur-md border-b border-[#C5A880]/20 shadow-none"
+      )}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           

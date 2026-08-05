@@ -57,7 +57,7 @@ export function Header() {
     };
   }, [isMobileMenuOpen]);
 
-  if (phase !== "landing") return null;
+  if (phase === "intro") return null;
 
   const isScrolled = scrollY > 20;
 
@@ -65,10 +65,10 @@ export function Header() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-40 w-full transition-all duration-500",
+          "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ease-in-out",
           isScrolled
-            ? "border-b border-white/[0.12] bg-[#0B0D11]/90 py-3 sm:py-4 shadow-[0_12px_36px_rgba(0,0,0,0.18)] backdrop-blur-xl"
-            : "bg-transparent py-4 sm:py-6"
+            ? "border-b border-white/[0.12] bg-[#0B0D11]/92 py-3 sm:py-4 shadow-[0_12px_36px_rgba(0,0,0,0.35)] backdrop-blur-xl"
+            : "border-b border-transparent bg-[#0B0D11]/40 py-4 sm:py-6 backdrop-blur-md shadow-none"
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 md:px-12">

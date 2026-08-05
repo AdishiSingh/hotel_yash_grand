@@ -63,7 +63,13 @@ export default function CustomerDashboardPage() {
   async function fetchDashboardData() {
     try {
       const res = await fetch("/api/customer/dashboard");
-      const json = await res.json();
+      const text = await res.text();
+      let json: any = {};
+      try {
+        json = text ? JSON.parse(text) : {};
+      } catch (e) {
+        json = { success: false, error: "Invalid server response format." };
+      }
 
       if (!res.ok || !json.success) {
         setError(json.error || "Failed to load customer dashboard.");

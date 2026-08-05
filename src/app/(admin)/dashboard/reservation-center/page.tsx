@@ -117,8 +117,14 @@ export default function ReservationCenterPage() {
       setLoading(true);
       const url = `/api/booking-requests?search=${encodeURIComponent(searchQuery)}`;
       const res = await fetch(url);
-      const json = await res.json();
-      if (json.success) {
+      const text = await res.text();
+      let json: any = {};
+      try {
+        json = text ? JSON.parse(text) : {};
+      } catch (e) {
+        json = { success: false, error: "Invalid server response format." };
+      }
+      if (res.ok && json.success) {
         setRequests(json.requests);
         setOccupancyStats(json.occupancyStats);
       }
@@ -131,6 +137,28 @@ export default function ReservationCenterPage() {
 
   React.useEffect(() => {
     fetchRequests();
+
+    // Subscribe to realtime database event bus
+    const handleRealtimeEvent = (payload: any) => {
+      if (
+        payload.type === "BOOKING_REQUEST_UPDATED" ||
+        payload.type === "BOOKING_UPDATED" ||
+        payload.type === "DASHBOARD_REFRESH"
+      ) {
+        fetchRequests();
+      }
+    };
+
+    const { realtimeBus } = require("@/lib/events");
+    realtimeBus.on("event", handleRealtimeEvent);
+
+    // Periodic 15-second revalidation timer
+    const interval = setInterval(fetchRequests, 15000);
+
+    return () => {
+      realtimeBus.off("event", handleRealtimeEvent);
+      clearInterval(interval);
+    };
   }, [fetchRequests]);
 
   // Load Detailed Booking Profile

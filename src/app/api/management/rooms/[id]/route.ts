@@ -42,7 +42,7 @@ export async function PATCH(
         });
 
         return booking;
-      });
+      }, { maxWait: 10000, timeout: 20000 });
 
       await AuditLogService.log({
         action: "GUEST_CHECKED_IN",
@@ -67,7 +67,7 @@ export async function PATCH(
         });
 
         return booking;
-      });
+      }, { maxWait: 10000, timeout: 20000 });
 
       await AuditLogService.log({
         action: "GUEST_CHECKED_OUT",

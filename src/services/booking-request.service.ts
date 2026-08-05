@@ -3,6 +3,7 @@ import prisma from "@/lib/prisma";
 import { AuditLogService } from "@/services/audit.service";
 import { NotificationService } from "@/services/notification.service";
 import { NotificationAutomationService } from "@/services/notification-automation.service";
+import { RoomAvailabilityService } from "@/services/room-availability.service";
 import { realtimeBus } from "@/lib/events";
 import { OFFICIAL_HOTEL_WHATSAPP } from "@/lib/whatsapp";
 
@@ -56,6 +57,9 @@ export class BookingRequestService {
       }
       const cIn = new Date(data.checkIn);
       const cOut = new Date(data.checkOut);
+      if (isNaN(cIn.getTime()) || isNaN(cOut.getTime())) {
+        throw new Error("Check-in and Check-out must be valid dates.");
+      }
       if (cOut <= cIn) {
         throw new Error("Check-out date must be strictly after Check-in date.");
       }
@@ -85,9 +89,19 @@ export class BookingRequestService {
       }
     }
 
-    const dateStr = new Date().getFullYear().toString();
-    const randomSeq = Math.floor(1000 + Math.random() * 9000).toString();
-    const requestId = `YG-REQ-${dateStr}-${randomSeq}`;
+    // Generate unique collision-proof requestId
+    let requestId = "";
+    let isUniqueReqId = false;
+    let reqAttempts = 0;
+    while (!isUniqueReqId && reqAttempts < 5) {
+      reqAttempts++;
+      const dateStr = new Date().getFullYear().toString();
+      const randomSeq = Math.floor(100000 + Math.random() * 900000).toString();
+      requestId = `YG-REQ-${dateStr}-${randomSeq}`;
+      const existing = await prisma.bookingRequest.findUnique({ where: { requestId } });
+      if (!existing) isUniqueReqId = true;
+    }
+
     const guestPortalToken = `token-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
 
     const checkInDate = data.checkIn ? new Date(data.checkIn) : null;
@@ -168,26 +182,38 @@ export class BookingRequestService {
       }
 
       return created;
-    });
+    }, { maxWait: 10000, timeout: 20000 });
 
-    await AuditLogService.log({
-      action: "BOOKING_REQUEST_CREATED",
-      details: `New ${data.type} booking request ${requestId} created for ${data.guestName} (${data.mobile})`,
-    });
+    try {
+      await AuditLogService.log({
+        action: "BOOKING_REQUEST_CREATED",
+        details: `New ${data.type} booking request ${requestId} created for ${data.guestName} (${data.mobile})`,
+      });
+    } catch (e) {
+      console.warn("Audit log error:", e);
+    }
 
     // Trigger Multi-Channel Automated Notification Suite (Email, WhatsApp, SMS, In-App, Manager Alert)
-    NotificationAutomationService.triggerBookingSubmitted({
-      requestId: request.requestId,
-      guestName: request.guestName,
-      guestEmail: request.email || undefined,
-      mobile: request.mobile,
-      roomType: request.roomType || undefined,
-      checkIn: checkInDate?.toLocaleDateString(),
-      checkOut: checkOutDate?.toLocaleDateString(),
-      customerId: request.customerId || undefined,
-    });
+    try {
+      NotificationAutomationService.triggerBookingSubmitted({
+        requestId: request.requestId,
+        guestName: request.guestName,
+        guestEmail: request.email || undefined,
+        mobile: request.mobile,
+        roomType: request.roomType || undefined,
+        checkIn: checkInDate?.toLocaleDateString(),
+        checkOut: checkOutDate?.toLocaleDateString(),
+        customerId: request.customerId || undefined,
+      });
+    } catch (e) {
+      console.warn("Notification error:", e);
+    }
 
-    realtimeBus.broadcast("BOOKING_REQUEST_UPDATED", "NEW_REQUEST", request);
+    try {
+      realtimeBus.broadcast("BOOKING_REQUEST_UPDATED", "NEW_REQUEST", request);
+    } catch (e) {
+      console.warn("Realtime broadcast error:", e);
+    }
 
     const whatsappMessage = `🏨 NEW ${data.type === "ROOM" ? "ROOM" : "BANQUET"} BOOKING REQUEST
 
@@ -443,11 +469,96 @@ Manager Dashboard: https://hotelyashgrand.com/dashboard/reservation-center`;
       throw new Error("Booking request has already been approved.");
     }
 
+    // Resolve Check-In / Check-Out dates safely
+    const cIn = request.checkIn ? new Date(request.checkIn) : new Date();
+    let cOut = request.checkOut ? new Date(request.checkOut) : new Date(cIn.getTime() + 86400000);
+    if (isNaN(cIn.getTime())) cIn.setTime(Date.now());
+    if (isNaN(cOut.getTime()) || cOut <= cIn) {
+      cOut = new Date(cIn.getTime() + 86400000);
+    }
+
+    let createdBookingNumber = "";
+
+    if (request.type === "ROOM") {
+      // 1. Resolve Target Room
+      let targetRoomId = assignedRoomId;
+      if (!targetRoomId && assignedRoomNumber) {
+        let roomObj = await prisma.room.findUnique({
+          where: { roomNumber: assignedRoomNumber },
+        });
+        if (!roomObj) {
+          roomObj = await prisma.room.create({
+            data: {
+              roomNumber: assignedRoomNumber,
+              type: request.roomType || "Single Deluxe Room",
+              pricePerNight: totalAmount || 2500,
+              capacity: 4,
+              status: "AVAILABLE",
+            },
+          });
+        }
+        targetRoomId = roomObj.id;
+      }
+
+      if (!targetRoomId) {
+        let availableRoom = await prisma.room.findFirst({
+          where: { status: "AVAILABLE" },
+        });
+        if (!availableRoom) {
+          availableRoom = await prisma.room.create({
+            data: {
+              roomNumber: "101",
+              type: request.roomType || "Single Deluxe Room",
+              pricePerNight: totalAmount || 2500,
+              capacity: 4,
+              status: "AVAILABLE",
+            },
+          });
+        }
+        targetRoomId = availableRoom.id;
+      }
+
+      // 2. Perform Overbooking Check before approval
+      const overbooking = await RoomAvailabilityService.checkOverbooking(
+        targetRoomId,
+        cIn,
+        cOut
+      );
+      if (overbooking.isOverbooked) {
+        const conflict = overbooking.conflictingBookings[0];
+        throw new Error(
+          `Overbooking conflict: Room is already reserved for overlapping dates (${new Date(conflict.checkIn).toLocaleDateString()} to ${new Date(conflict.checkOut).toLocaleDateString()}, Booking #${conflict.bookingId}). Please select a different room.`
+        );
+      }
+
+      // 3. Collision-Proof Booking ID Generator
+      let isUniqueBkId = false;
+      let bkAttempts = 0;
+      while (!isUniqueBkId && bkAttempts < 5) {
+        bkAttempts++;
+        const seq = Math.floor(100000 + Math.random() * 900000);
+        createdBookingNumber = `YG-BK-${new Date().getFullYear()}-${seq}`;
+        const existing = await prisma.roomBooking.findUnique({ where: { bookingId: createdBookingNumber } });
+        if (!existing) isUniqueBkId = true;
+      }
+    } else if (request.type === "BANQUET") {
+      let isUniqueBqId = false;
+      let bqAttempts = 0;
+      while (!isUniqueBqId && bqAttempts < 5) {
+        bqAttempts++;
+        const seq = Math.floor(100000 + Math.random() * 900000);
+        createdBookingNumber = `YG-BQ-${new Date().getFullYear()}-${seq}`;
+        const existing = await prisma.banquetBooking.findFirst({ where: { enquiryId: createdBookingNumber } });
+        if (!existing) isUniqueBqId = true;
+      }
+    }
+
+    // Atomic Transaction for Request Approval + RoomBooking Creation + Room Availability Update
     const result = await prisma.$transaction(async (tx) => {
       const updatedReq = await tx.bookingRequest.update({
         where: { id: request.id },
         data: {
-          status: advanceAmount > 0 ? "PAYMENT_PENDING" : "APPROVED",
+          status: advanceAmount > 0 ? "PAYMENT_PENDING" : "CONFIRMED",
           approvedAt: new Date(),
           approvedBy: managerName,
           managerRemarks: managerRemarks || null,
@@ -458,78 +569,60 @@ Manager Dashboard: https://hotelyashgrand.com/dashboard/reservation-center`;
         },
       });
 
-      let createdBookingNumber = "";
-      if (request.type === "ROOM") {
-        const seq = Math.floor(1000 + Math.random() * 9000);
-        createdBookingNumber = `YG-BK-${new Date().getFullYear()}-${seq}`;
+      let createdBooking: any = null;
 
+      if (request.type === "ROOM") {
         let targetRoomId = assignedRoomId;
         if (!targetRoomId && assignedRoomNumber) {
-          let roomObj = await tx.room.findUnique({
-            where: { roomNumber: assignedRoomNumber },
-          });
-          if (!roomObj) {
-            roomObj = await tx.room.create({
-              data: {
-                roomNumber: assignedRoomNumber,
-                type: request.roomType || "Single Deluxe Room",
-                pricePerNight: 2500,
-                capacity: 4,
-                status: "AVAILABLE",
-              },
-            });
-          }
-          targetRoomId = roomObj.id;
+          const roomObj = await tx.room.findUnique({ where: { roomNumber: assignedRoomNumber } });
+          if (roomObj) targetRoomId = roomObj.id;
         }
-
         if (!targetRoomId) {
-          let availableRoom = await tx.room.findFirst({
-            where: { status: "AVAILABLE" },
-          });
-          if (!availableRoom) {
-            availableRoom = await tx.room.create({
-              data: {
-                roomNumber: "101",
-                type: request.roomType || "Single Deluxe Room",
-                pricePerNight: 2500,
-                capacity: 4,
-                status: "AVAILABLE",
-              },
-            });
-          }
-          targetRoomId = availableRoom.id;
+          const availableRoom = await tx.room.findFirst({ where: { status: "AVAILABLE" } });
+          if (availableRoom) targetRoomId = availableRoom.id;
         }
 
-        if (targetRoomId && request.checkIn && request.checkOut) {
+        if (targetRoomId) {
           let customerId = request.customerId;
           if (!customerId) {
             const cust = await tx.customer.upsert({
               where: { phone: request.mobile },
-              update: { name: request.guestName },
+              update: { name: request.guestName, email: request.email || undefined },
               create: { name: request.guestName, phone: request.mobile, email: request.email },
             });
             customerId = cust.id;
           }
 
-          await tx.roomBooking.create({
+          // GUARANTEED RoomBooking creation inside transaction
+          createdBooking = await tx.roomBooking.create({
             data: {
               bookingId: createdBookingNumber,
               roomId: targetRoomId,
               customerId,
-              checkIn: request.checkIn,
-              checkOut: request.checkOut,
+              checkIn: cIn,
+              checkOut: cOut,
               guests: (request.adults || 1) + (request.children || 0),
-              totalAmount: totalAmount || 2500,
+              adults: request.adults || 1,
+              children: request.children || 0,
+              totalAmount: totalAmount || request.totalAmount || 2500,
               advancePaid: advanceAmount,
               status: "CONFIRMED",
               specialRequests: request.specialRequest,
             },
+            include: {
+              room: true,
+              customer: true,
+            },
+          });
+
+          // Update Room Inventory Status to RESERVED (or OCCUPIED if checkIn is today)
+          const isTodayCheckIn = cIn.toDateString() === new Date().toDateString();
+          await tx.room.update({
+            where: { id: targetRoomId },
+            data: { status: isTodayCheckIn ? "OCCUPIED" : "RESERVED" },
           });
         }
       } else if (request.type === "BANQUET") {
-        const seq = Math.floor(1000 + Math.random() * 9000);
-        createdBookingNumber = `YG-BQ-${new Date().getFullYear()}-${seq}`;
-
         await tx.banquetBooking.create({
           data: {
             enquiryId: createdBookingNumber,
@@ -556,26 +649,33 @@ Manager Dashboard: https://hotelyashgrand.com/dashboard/reservation-center`;
         },
       });
 
-      return { request: updatedReq, bookingNumber: createdBookingNumber };
-    });
+      return { request: updatedReq, bookingNumber: createdBookingNumber, createdBooking };
+    }, { maxWait: 10000, timeout: 20000 });
 
-    await AuditLogService.log({
-      action: "BOOKING_REQUEST_APPROVED",
-      details: `Manager ${managerName} approved ${request.type} request ${request.requestId}. Created Booking ${result.bookingNumber}`,
-    });
+    try {
+      await AuditLogService.log({
+        action: "BOOKING_REQUEST_APPROVED",
+        details: `Manager ${managerName} approved ${request.type} request ${request.requestId}. Created Booking ${result.bookingNumber}`,
+      });
+    } catch (e) {
+      console.warn("Audit log error:", e);
+    }
 
-    // Trigger Multi-Channel Automated Approval Notification Suite
-    NotificationAutomationService.triggerBookingApproved({
-      requestId: request.requestId,
-      bookingId: result.bookingNumber || request.requestId,
-      guestName: request.guestName,
-      guestEmail: request.email || undefined,
-      mobile: request.mobile,
-      roomName: request.roomType || undefined,
-      totalAmount: totalAmount || request.totalAmount || 0,
-      managerRemarks: managerRemarks || undefined,
-      customerId: request.customerId || undefined,
-    });
+    try {
+      NotificationAutomationService.triggerBookingApproved({
+        requestId: request.requestId,
+        bookingId: result.bookingNumber || request.requestId,
+        guestName: request.guestName,
+        guestEmail: request.email || undefined,
+        mobile: request.mobile,
+        roomName: request.roomType || undefined,
+        totalAmount: totalAmount || request.totalAmount || 0,
+        managerRemarks: managerRemarks || undefined,
+        customerId: request.customerId || undefined,
+      });
+    } catch (e) {
+      console.warn("Notification automation error:", e);
+    }
 
     const customerMessage = `🎉 CONGRATULATIONS!
 
@@ -584,8 +684,8 @@ Your ${request.type === "ROOM" ? "room booking" : request.type === "BANQUET" ? "
 Hotel: HOTEL YASH GRAND
 Booking Number: ${result.bookingNumber || request.requestId}
 Guest Name: ${request.guestName}
-${request.type === "ROOM" ? `Check-in: ${request.checkIn ? new Date(request.checkIn).toLocaleDateString() : "TBD"} (12:00 PM)
-Check-out: ${request.checkOut ? new Date(request.checkOut).toLocaleDateString() : "TBD"} (11:00 AM)
+${request.type === "ROOM" ? `Check-in: ${cIn.toLocaleDateString()} (12:00 PM)
+Check-out: ${cOut.toLocaleDateString()} (11:00 AM)
 Room Type: ${request.roomType || "Deluxe Suite"}${assignedRoomNumber ? ` (Room ${assignedRoomNumber})` : ""}` : request.type === "BANQUET" ? `Event Date: ${request.eventDate ? new Date(request.eventDate).toLocaleDateString() : "TBD"}
 Event Type: ${request.eventType}` : `Reservation Date: ${request.eventDate ? new Date(request.eventDate).toLocaleDateString() : "TBD"}
 Guests: ${request.guestsCount || 2}`}
@@ -602,7 +702,15 @@ Cancellation Policy: Free cancellation up to 48 hours prior to check-in.`;
     const cleanCustomerPhone = request.mobile.replace(/[^0-9]/g, "");
     const customerWhatsappUrl = `https://wa.me/${cleanCustomerPhone}?text=${encodeURIComponent(customerMessage)}`;
 
-    realtimeBus.broadcast("BOOKING_REQUEST_UPDATED", "APPROVED", result);
+    try {
+      realtimeBus.broadcast("BOOKING_REQUEST_UPDATED", "APPROVED", result);
+      if (result.createdBooking) {
+        realtimeBus.broadcast("BOOKING_UPDATED", "CREATED", result.createdBooking);
+      }
+      realtimeBus.broadcast("DASHBOARD_REFRESH", "OCCUPANCY_CHANGE");
+    } catch (e) {
+      console.warn("Realtime broadcast error:", e);
+    }
 
     return {
       success: true,
@@ -610,6 +718,7 @@ Cancellation Policy: Free cancellation up to 48 hours prior to check-in.`;
       customerWhatsappUrl,
       customerMessage,
       guestPortalUrl: `https://hotelyashgrand.com/guest/booking/${request.guestPortalToken}`,
+      createdBooking: result.createdBooking,
     };
   }
 
@@ -681,12 +790,14 @@ Thank you for your interest in HOTEL YASH GRAND.`;
   }
 
   /**
-   * Check Room Conflicts
+   * Check Room Conflicts & Live Occupancy
    */
   static async checkRoomConflicts(checkIn?: string | Date, checkOut?: string | Date) {
     const totalRooms = await prisma.room.count();
     const occupiedRooms = await prisma.room.count({ where: { status: "OCCUPIED" } });
+    const reservedRooms = await prisma.room.count({ where: { status: "RESERVED" } });
     const availableRooms = await prisma.room.count({ where: { status: "AVAILABLE" } });
+    const activeOccupied = occupiedRooms + reservedRooms;
 
     let overlappingBookings: any[] = [];
     if (checkIn && checkOut) {
@@ -711,8 +822,9 @@ Thank you for your interest in HOTEL YASH GRAND.`;
     return {
       totalRooms,
       occupiedRooms,
+      reservedRooms,
       availableRooms,
-      occupancyRate: totalRooms > 0 ? Math.round((occupiedRooms / totalRooms) * 100) : 0,
+      occupancyRate: totalRooms > 0 ? Math.min(100, Math.round((activeOccupied / totalRooms) * 100)) : 0,
       overlappingCount: overlappingBookings.length,
       overlappingBookings,
     };

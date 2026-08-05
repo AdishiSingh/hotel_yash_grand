@@ -3,6 +3,7 @@ import { BookingStatus, RoomStatus } from "@prisma/client";
 import { z } from "zod";
 import { createRoomBookingSchema, updateBookingStatusSchema } from "@/lib/validations";
 import { AuditLogService } from "@/services/audit.service";
+import { RoomAvailabilityService } from "@/services/room-availability.service";
 import { realtimeBus } from "@/lib/events";
 import { NotificationService } from "@/services/notification.service";
 
@@ -20,8 +21,30 @@ export class BookingService {
       throw new Error("Check-out date must be after Check-in date");
     }
 
-    const bookingSeq = Math.floor(1000 + Math.random() * 9000);
-    const bookingId = `YG-BK-${new Date().getFullYear()}-${bookingSeq}`;
+    // 1. Perform Overbooking Check
+    const overbooking = await RoomAvailabilityService.checkOverbooking(
+      validated.roomId,
+      checkInDate,
+      checkOutDate
+    );
+    if (overbooking.isOverbooked) {
+      const conflict = overbooking.conflictingBookings[0];
+      throw new Error(
+        `Overbooking conflict: Room is already reserved for stay dates (${conflict.bookingId}). Please select another room or modify stay dates.`
+      );
+    }
+
+    // 2. Collision-proof Booking ID generator
+    let bookingId = "";
+    let isUnique = false;
+    let attempts = 0;
+    while (!isUnique && attempts < 5) {
+      attempts++;
+      const bookingSeq = Math.floor(100000 + Math.random() * 900000);
+      bookingId = `YG-BK-${new Date().getFullYear()}-${bookingSeq}`;
+      const existing = await prisma.roomBooking.findUnique({ where: { bookingId } });
+      if (!existing) isUnique = true;
+    }
 
     const booking = await prisma.$transaction(async (tx) => {
       const room = await tx.room.findUnique({
@@ -72,29 +95,42 @@ export class BookingService {
         },
       });
 
+      const isTodayCheckIn = checkInDate.toDateString() === new Date().toDateString();
       await tx.room.update({
         where: { id: validated.roomId },
-        data: { status: RoomStatus.OCCUPIED },
+        data: { status: isTodayCheckIn ? RoomStatus.OCCUPIED : RoomStatus.RESERVED },
       });
 
       return res;
-    });
+    }, { maxWait: 10000, timeout: 20000 });
 
-    await AuditLogService.log({
-      action: "BOOKING_CREATED",
-      details: `Created room booking ${bookingId} for guest ${validated.customerName} (Room ID: ${validated.roomId})`,
-    });
+    try {
+      await AuditLogService.log({
+        action: "BOOKING_CREATED",
+        details: `Created room booking ${bookingId} for guest ${validated.customerName} (Room ID: ${validated.roomId})`,
+      });
+    } catch (e) {
+      console.warn("Audit log error:", e);
+    }
 
     // Realtime Event Broadcast & Notification
-    realtimeBus.broadcast("BOOKING_UPDATED", "CREATED", booking);
-    realtimeBus.broadcast("DASHBOARD_REFRESH", "OCCUPANCY_CHANGE");
+    try {
+      realtimeBus.broadcast("BOOKING_UPDATED", "CREATED", booking);
+      realtimeBus.broadcast("DASHBOARD_REFRESH", "OCCUPANCY_CHANGE");
+    } catch (e) {
+      console.warn("Realtime broadcast error:", e);
+    }
 
-    await NotificationService.createNotification({
-      title: "New Room Reservation",
-      message: `Booking ${bookingId} reserved for ${validated.customerName} (₹${validated.totalAmount})`,
-      type: "INFO",
-      link: "/dashboard/rooms",
-    });
+    try {
+      await NotificationService.createNotification({
+        title: "New Room Reservation",
+        message: `Booking ${bookingId} reserved for ${validated.customerName} (₹${validated.totalAmount})`,
+        type: "INFO",
+        link: "/dashboard/rooms",
+      });
+    } catch (e) {
+      console.warn("Notification error:", e);
+    }
 
     return booking;
   }

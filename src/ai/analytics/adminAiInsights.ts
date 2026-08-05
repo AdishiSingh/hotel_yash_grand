@@ -5,7 +5,8 @@ export interface BusinessInsight {
   message: string;
 }
 
-export function generateBusinessInsights(): BusinessInsight[] {
+export function generateBusinessInsights(liveOccupancyRate?: number): BusinessInsight[] {
+  const occRate = typeof liveOccupancyRate === "number" ? liveOccupancyRate : 0;
   return [
     {
       id: "ins-01",
@@ -28,8 +29,8 @@ export function generateBusinessInsights(): BusinessInsight[] {
     {
       id: "ins-04",
       metric: "Occupancy Boost",
-      trend: "positive",
-      message: "Room Occupancy stands at 85% this morning, driven by strong demand for Single Deluxe and Family rooms."
+      trend: occRate > 50 ? "positive" : "warning",
+      message: `Live Room Occupancy stands at ${occRate}% based on real-time database inventory, driven by suite reservations.`
     }
   ];
 }

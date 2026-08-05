@@ -15,7 +15,13 @@ export async function GET(req: NextRequest) {
 
     // Fetch Room Bookings with Room details & Payments
     const roomBookings = await prisma.roomBooking.findMany({
-      where: { customerId },
+      where: {
+        OR: [
+          { customerId },
+          { customer: { phone } },
+          ...(email ? [{ customer: { email } }] : []),
+        ],
+      },
       include: {
         room: true,
         payments: true,

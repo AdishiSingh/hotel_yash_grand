@@ -142,10 +142,13 @@ export function ReservationDrawer() {
     setActiveStep("summary");
   };
 
+  const [bookingErrorMessage, setBookingErrorMessage] = React.useState<string | null>(null);
+
   const executeCheckout = async (channel: "whatsapp" | "email") => {
     // Intercept with Centralized Booking Guard
     requireAuth(async (authenticatedCustomer, formData) => {
-      updateFields({ isSubmitting: true });
+      updateFields({ isSubmitting: true, validationError: undefined });
+      setBookingErrorMessage(null);
 
       try {
         const payload = {
@@ -167,23 +170,39 @@ export function ReservationDrawer() {
           body: JSON.stringify(payload),
         });
 
-        const json = await res.json();
+        const text = await res.text();
+        let json: any = {};
+        try {
+          json = text ? JSON.parse(text) : {};
+        } catch (e) {
+          json = { success: false, error: "Invalid server response format." };
+        }
 
-        if (json.success && json.request) {
+        if (res.ok && json.success && json.request) {
+          // Success ONLY after confirmed database commit
           const bookingId = json.request.requestId || `YG-REQ-${Date.now().toString().slice(-4)}`;
           setCreatedBookingId(bookingId);
+          setBookingErrorMessage(null);
+          setActiveStep("success");
 
           if (channel === "whatsapp") {
-            const message = `Hello Hotel Yash Grand, I have created a booking request #${bookingId} for ${payload.roomType} (${payload.checkIn} to ${payload.checkOut}).`;
-            const whatsappUrl = `https://wa.me/919151088115?text=${encodeURIComponent(message)}`;
+            const message = json.whatsappMessage || `Hello Hotel Yash Grand, I have created a booking request #${bookingId} for ${payload.roomType} (${payload.checkIn} to ${payload.checkOut}).`;
+            const whatsappUrl = json.managerWhatsappUrl || `https://wa.me/919151088115?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, "_blank");
           }
+        } else {
+          // Handle API & Database Failures
+          const errorMsg = json.error || json.message || "Failed to submit booking request. Please check room availability and try again.";
+          setBookingErrorMessage(errorMsg);
+          setActiveStep("error");
         }
-      } catch (err) {
+      } catch (err: any) {
         console.error("Booking creation error:", err);
+        const netErr = err.message || "Network connection error. Please check your internet and try again.";
+        setBookingErrorMessage(netErr);
+        setActiveStep("error");
       } finally {
         updateFields({ isSubmitting: false });
-        setActiveStep("success");
       }
     }, {
       guestName,
@@ -614,8 +633,43 @@ export function ReservationDrawer() {
             </div>
           )}
 
-        </div>
+          {/* STEP 4: Failed / Error Screen */}
+          {activeStep === "error" && (
+            <div className="h-full flex flex-col justify-center items-center text-center space-y-6 pt-12 animate-fade-in">
+              <div className="h-16 w-16 border border-red-500/50 rounded-full flex items-center justify-center text-red-500 text-2xl bg-red-500/10">
+                ✕
+              </div>
+              
+              <div className="space-y-2">
+                <span className="text-[10px] uppercase tracking-widest text-red-400 font-bold">
+                  Transaction Failed
+                </span>
+                <h3 className="font-serif text-2xl font-bold text-white">Booking Failed</h3>
+              </div>
 
+              <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-xs text-red-300 font-sans leading-relaxed max-w-sm w-full text-left">
+                {bookingErrorMessage || "An unexpected error occurred while processing your booking. Please check details and try again."}
+              </div>
+
+              <div className="pt-4 space-y-3 w-full">
+                <Button
+                  onClick={() => setActiveStep("summary")}
+                  variant="primary"
+                  className="w-full text-xs font-semibold py-4"
+                >
+                  Try Again
+                </Button>
+
+                <a
+                  href="tel:+919151088115"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg border border-gold/30 text-gold text-xs font-bold hover:bg-gold/10 transition-all cursor-pointer"
+                >
+                  <span>Call Desk: +91 91510 88115</span>
+                </a>
+              </div>
+            </div>
+          )}
+        </div>
       </aside>
     </>
   );

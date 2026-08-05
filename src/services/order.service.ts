@@ -114,7 +114,7 @@ export class OrderService {
       });
 
       return { ...order, bill };
-    });
+    }, { maxWait: 10000, timeout: 20000 });
 
     console.log(`[ORDER LIFECYCLE 5/5] Transaction committed cleanly for ${orderId}. Created ${result.items.length} OrderItems & Bill ${billNumber}.`);
 

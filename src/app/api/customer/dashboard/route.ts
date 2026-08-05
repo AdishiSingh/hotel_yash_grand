@@ -48,7 +48,13 @@ export async function GET(req: NextRequest) {
 
     // 2. Room Bookings (Upcoming, Past, Cancelled)
     const allRoomBookings = await prisma.roomBooking.findMany({
-      where: { customerId },
+      where: {
+        OR: [
+          { customerId },
+          { customer: { phone } },
+          ...(email ? [{ customer: { email } }] : []),
+        ],
+      },
       include: {
         room: true,
         payments: true,

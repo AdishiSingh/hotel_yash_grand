@@ -49,7 +49,7 @@ export class PaymentService {
       }
 
       return res;
-    });
+    }, { maxWait: 10000, timeout: 20000 });
 
     await AuditLogService.log({
       action: "PAYMENT_RECORDED",

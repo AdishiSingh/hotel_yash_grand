@@ -107,7 +107,7 @@ export async function GET(req: NextRequest) {
       where: { checkOut: { gte: todayStart, lte: todayEnd } },
     });
 
-    const occupancyRate = totalRooms > 0 ? Math.round((occupiedRooms / totalRooms) * 100) : 0;
+    const occupancyRate = totalRooms > 0 ? Math.min(100, Math.round(((occupiedRooms + reservedRooms) / totalRooms) * 100)) : 0;
 
     return NextResponse.json({
       success: true,

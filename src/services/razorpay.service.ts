@@ -139,7 +139,7 @@ export class RazorpayService {
       }
 
       return res;
-    });
+    }, { maxWait: 10000, timeout: 20000 });
 
     // Logging & Realtime Broadcast
     await AuditLogService.log({
