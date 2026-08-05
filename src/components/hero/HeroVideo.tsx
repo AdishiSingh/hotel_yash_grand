@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ASSET_MANIFEST } from "@/shared/lib/asset-manifest";
 
@@ -15,17 +16,13 @@ export function HeroVideo() {
         style={{ y, opacity }}
         className="absolute inset-0 w-full h-full"
       >
-        <motion.img
+        <Image
           src={ASSET_MANIFEST.hotel.facadeMain}
           alt="Hotel Yash Grand Exterior facade and main entrance signage in Varanasi"
-          initial={{ scale: 1 }}
-          animate={{ scale: [1, 1.04, 1] }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut",
-          }}
+          fill
+          priority
+          sizes="100vw"
+          quality={85}
           className="h-full w-full object-cover object-[center_24%] md:object-[center_20%] xl:object-[center_18%] filter brightness-[1.06] contrast-[1.07] saturate-[1.1] sepia-[0.04]"
         />
       </motion.div>
